@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['the-happy-reader', 'localhost']
+ALLOWED_HOSTS = ['the-happy-reader.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'the_happy_reader.urls'
+ROOT_URLCONF = 'the-happy-reader.urls'
 
 TEMPLATES = [
     {
