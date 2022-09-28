@@ -1,1 +1,1 @@
-web: guicorn codestar.wsgi
+web: guicorn the-happy-reader.wsgi
