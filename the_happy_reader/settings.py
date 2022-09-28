@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'the_happy_reader.wsgi.application'
+WSGI_APPLICATION = 'the-happy-reader.wsgi.application'
 
 
 # Database
