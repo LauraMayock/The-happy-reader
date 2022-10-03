@@ -1,108 +1,118 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **The happy Reader - Project Portfolio 4**
 
-Welcome LauraMayock,
+![The happy Reader]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+OPENING PARAGRAPH-
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+You can view the live site here - <a href="" target="_blank"> The happy reader </a>
 
-## Gitpod Reminders
+# Objective
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The aim of this site is to deliver an interactive website that users can engage with via a user log in system to acess a book database in which they can engage with to leave comments, search books, bookmark their favourite books.
 
-`python3 -m http.server`
+[Back to top](<#contents>)
 
-A blue button should appear to click: _Make Public_,
+# User Experience (UX)
 
-Another blue button should appear to click: _Open Browser_.
+## Site Aims
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* To provide the user with a website that allows them to view book listings and reviews geared towards children
+* To easily find books that may be perfect for their child.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Agile Methodology
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board which can be seen here -  <a href="" target="_blank"> The happy reader Project </a>
 
-To log into the Heroku toolbelt CLI:
+Through the use of the Kanban board in the projects view in Github, the project was divived into a few different sections:
+* Backlog
+* Current Iteration
+* In Progress
+* Done
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![Kanban board github](https://github.com/users/LauraMayock/projects/3)
+Theeir layout.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### User Stories
 
-------
+**Iteration 1**
+* As a **user**  I can **easily see the purpose of this website on the home page** so that **I can easily navigate it**
+* As a **user**  I can **view a list of book reviews** so that ** so I can choose the ones most interested to me **
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+**Iteration 2**
+* As a **user**  I can **fill out a contact form** so that **so that I can easily contact**
+* As a **user**  I can **save books** so that **I can easily see books of interest to me**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+**Iteration 3**
+* As a **site admin**  I can **access comments left by users ** so that **I can approve or not approve and delete user uploads**
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Design Wireframes
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<details> <summary> Low fidelity mobile wireframes</summary>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Home Page](//the_happy_reader/Docs/Mobile/Mobile-landing%20page.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Blog post](//the_happy_reader/Docs/Mobile/Mobile-%20Blog%20post%20when%20clicked.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Signup Page](//the_happy_reader/Docs/Mobile/Mobile-%20Sign%20Up.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![Login Page](//the_happy_reader/Docs/Mobile/Mobile-%20Login%20page.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![My Books](//the_happy_reader/Docs/Mobile/Mobile-%20List%20of%20saved%20books.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Contact Page](//the_happy_reader/Docs/Mobile/Mobile-%20Contact.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+</details>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+<details> <summary> Low fidelity tablet wireframes</summary>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Home Page](//the_happy_reader/Docs/Tablet/Tablet-landing%20page.png)
 
-------
+![Signup Page](//the_happy_reader/Docs/Tablet/Tablet-%20Sign%20up.png)
 
-## FAQ about the uptime script
+![Login Page](//the_happy_reader/Docs/Tablet/Tablet%20-%20Log%20in%20page.png)
 
-**Why have you added this script?**
+![Blog post](//the_happy_reader/Docs/Tablet/Tablet-%20Blog%20post%20when%20clicked.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![My Books](//the_happy_reader/Docs/Tablet/Tablet-%20List%20of%20saved%20books.png)
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+</details>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+<details> <summary> Low fidelity Desktop wireframes</summary>
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![Home Page](//the_happy_reader/Docs/Tablet/Tablet-landing%20page.png)
 
-**So….?**
+![Signup Page](//the_happy_reader/Docs/Tablet/Tablet-%20Sign%20up.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![Login Page](//the_happy_reader/Docs/Tablet/Tablet%20-%20Log%20in%20page.png)
 
-**Can I opt out?**
+![Blog post](//the_happy_reader/Docs/Tablet/Tablet-%20Blog%20post%20when%20clicked.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![My Books](//the_happy_reader/Docs/Tablet/Tablet-%20List%20of%20saved%20books.png)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Database Schema
 
-**Anything more?**
+![Database Schema]()
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Site Structure
 
----
 
-Happy coding!
+
+
+## Design Choices
+
+### Color Scheme
+
+![Site colour scheme]()
+
+### Typography
+
+
+
+[Back to top](<#contents>)
+
+
