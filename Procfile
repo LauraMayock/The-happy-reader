@@ -1,1 +1,1 @@
-web gunicorn the_happy_reader.wsgi
+web: gunicorn the_happy_reader.wsgi
