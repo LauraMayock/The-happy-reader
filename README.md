@@ -116,3 +116,14 @@ Theeir layout.
 [Back to top](<#contents>)
 
 
+
+
+
+
+
+##bug
+
+[](//the_happy_reader/Docs/Going%20back%20to%20old%20repo.png)
+
+I tried to open a new workspace by and then deleted the old workspaces which caused my env.py  not to appear on my new workspace. I created an new env.py and it fixed the issue but by fixing it i lost of the work i had done.
+
