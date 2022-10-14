@@ -31,7 +31,7 @@ Through the use of the Kanban board in the projects view in Github, the project 
 * Done
 
 ![Kanban board github](https://github.com/users/LauraMayock/projects/3)
-Theeir layout.
+Their layout.
 
 ### User Stories
 
@@ -52,51 +52,56 @@ Theeir layout.
 
 <details> <summary> Low fidelity mobile wireframes</summary>
 
-![Home Page](//the_happy_reader/Docs/Mobile/Mobile-landing%20page.png)
+![Home Page](/the_happy_reader/Docs/Mobile/Mobile-landing%20page.png)
 
-![Blog post](//the_happy_reader/Docs/Mobile/Mobile-%20Blog%20post%20when%20clicked.png)
+![Blog post](/the_happy_reader/Docs/Mobile/Mobile-%20Blog%20post%20when%20clicked.png)
 
-![Signup Page](//the_happy_reader/Docs/Mobile/Mobile-%20Sign%20Up.png)
+![Signup Page](/the_happy_reader/Docs/Mobile/Mobile-%20Sign%20Up.png)
 
-![Login Page](//the_happy_reader/Docs/Mobile/Mobile-%20Login%20page.png)
+![Login Page](/the_happy_reader/Docs/Mobile/Mobile-%20Login%20page.png)
 
 
-![My Books](//the_happy_reader/Docs/Mobile/Mobile-%20List%20of%20saved%20books.png)
+![My Books](/the_happy_reader/Docs/Mobile/Mobile-%20List%20of%20saved%20books.png)
 
-![Contact Page](//the_happy_reader/Docs/Mobile/Mobile-%20Contact.png)
+![Contact Page](/the_happy_reader/Docs/Mobile/Mobile-%20Contact.png)
 
 </details>
 
 <details> <summary> Low fidelity tablet wireframes</summary>
 
-![Home Page](//the_happy_reader/Docs/Tablet/Tablet-landing%20page.png)
+![Home Page](/the_happy_reader/Docs/Tablet/Tablet-landing%20page.png)
 
-![Signup Page](//the_happy_reader/Docs/Tablet/Tablet-%20Sign%20up.png)
+![Signup Page](/the_happy_reader/Docs/Tablet/Tablet-%20Sign%20up.png)
 
-![Login Page](//the_happy_reader/Docs/Tablet/Tablet%20-%20Log%20in%20page.png)
+![Login Page](/the_happy_reader/Docs/Tablet/Tablet%20-%20Log%20in%20page.png)
 
-![Blog post](//the_happy_reader/Docs/Tablet/Tablet-%20Blog%20post%20when%20clicked.png)
+![Blog post](/the_happy_reader/Docs/Tablet/Tablet-%20Blog%20post%20when%20clicked.png)
 
-![My Books](//the_happy_reader/Docs/Tablet/Tablet-%20List%20of%20saved%20books.png)
+![My Books](/the_happy_reader/Docs/Tablet/Tablet-%20List%20of%20saved%20books.png)
 
 
 </details>
 
 <details> <summary> Low fidelity Desktop wireframes</summary>
 
-![Home Page](//the_happy_reader/Docs/Tablet/Tablet-landing%20page.png)
+![Home Page](/the_happy_reader/Docs/Tablet/Tablet-landing%20page.png)
 
-![Signup Page](//the_happy_reader/Docs/Tablet/Tablet-%20Sign%20up.png)
+![Signup Page](/the_happy_reader/Docs/Tablet/Tablet-%20Sign%20up.png)
 
-![Login Page](//the_happy_reader/Docs/Tablet/Tablet%20-%20Log%20in%20page.png)
+![Login Page](/the_happy_reader/Docs/Tablet/Tablet%20-%20Log%20in%20page.png)
 
-![Blog post](//the_happy_reader/Docs/Tablet/Tablet-%20Blog%20post%20when%20clicked.png)
+![Blog post](/the_happy_reader/Docs/Tablet/Tablet-%20Blog%20post%20when%20clicked.png)
 
-![My Books](//the_happy_reader/Docs/Tablet/Tablet-%20List%20of%20saved%20books.png)
+![My Books](/the_happy_reader/Docs/Tablet/Tablet-%20List%20of%20saved%20books.png)
+
+</details>
 
 ## Database Schema
+<details> <summary>Database layout using Lucidcharts</summary>
 
-![Database Schema]()
+![Database Schema](/the_happy_reader/Docs/Org%20chart.png)
+
+</details>
 
 ## Site Structure
 

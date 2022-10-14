@@ -2,24 +2,7 @@ body {
     background-color: #F9FAFC;
 }
 
-.name {
-    position: absolute;
-    top: 55%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    color:#E84610;
-    
-}
-.hero-image{
-    position: relative;
-    text-align: center;
-    color: red;
-}
-.name{
-    position:absolute;
-    top: 500px;
-    left: 50px;
-}
+
 
 .brand {
     font-family: Lato, sans-serif;
@@ -28,6 +11,7 @@ body {
     margin-right: 1.5rem;
     color: #4A4A4F;
 }
+
 
 .red-o {
     color: #E84610;

@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div class="hero-img,container-fluid">
-    <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1665136148/project%204/little-boy-child-covering-face-with-book_1_chtrz8.jpg"alt="child popping their head out of a book"class="img-fluid" alt="Responsive image">
-    <div class="row">
-        <main role="main" class="inner cover"> 
-            <div class="name">
-                <h1 class="mt-3">The Happy Reader</h1>
-            </div>
-           
-        </main>
+<body>
+<div class="view" style="background-image: url(https://res.cloudinary.com/dyhess8yw/image/upload/v1665136148/project%204/little-boy-child-covering-face-with-book_1_chtrz8.jpg); background-repeat: no-repeat; background-size: cover; img-responsive">
+    <div class="container py-8">
+      <header class="text-center text-white py-5">
+        <h1 class="display-4 font-weight-bold mb-4">The happy reader</h1>
+        <p class="lead mb-0">Everyone is a reader... Some just havent found the perfect book yet.</p>
+        </p>
+      </header>
+    </div>
+  </div>
+        
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -63,3 +64,4 @@
     {% endif %}
 </div>
 {%endblock%}
+</body>
