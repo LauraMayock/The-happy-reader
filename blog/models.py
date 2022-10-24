@@ -5,45 +5,71 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+class book_author(models.Model):
+    book_author = models.CharField(max_length=50)
+    author_image = CloudinaryField('image', default="placeholder")
+    slug = models.SlugField(max_length=500, unique=True)
+    
+    def __str__(self):
+        return self.book_author
+
+    
+
+
+class Genre(models.Model):
+    genre_name = models.CharField(max_length=50)
+    genre_image = CloudinaryField('image', default="placeholder")
+    slug = models.SlugField(max_length=500, unique=True)
+    
+    def __str__(self):
+        return self.genre_name
+
+
+
+class age_range(models.Model):
+    age_name = models.CharField(max_length=50)
+    age_image = CloudinaryField('image', default="placeholder")
+    slug = models.SlugField(max_length=500, unique=True)
+
+    class Meta:
+        db_table = "age_range"
+
+    def __str__(self):
+        return self.age_name
 
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    book_author: models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    AGE_RANGE = (
-    ('0-2', '0-2'),
-    ('3-5', '3-5'),
-    ('5-8', '5-8'),
-    ('8-12', '8-12'),
-    ('+13', '+13'),
-    )
-    AGE_RANGE = models.CharField(max_length=300, choices=AGE_RANGE)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts")
+        User, on_delete=models.CASCADE, related_name="blog_posts"
+    )
+    book_author = models.ForeignKey('book_author', on_delete = models.SET_NULL, null=True)
+    age_range = models.ForeignKey('age_range', on_delete = models.SET_NULL, null=True)
+    genre = models.ForeignKey('Genre', on_delete = models.SET_NULL, null=True)
     featured_image = CloudinaryField('image', default='placeholder')
-    blurb = models.TextField(blank=True)
-    review = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
     saves = models.ManyToManyField(
         User, related_name='blogpost_saves', blank=True)
+
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return self.title
     
 
-class Meta:
-    ordering = ["-created_on"]
-
-def __str__(self):
-    return self.title
-
-def number_of_likes(self):
-    return self.likes.count()
-
-def number_of_saves(self):
-    return self.saves.count()
+    def number_of_likes(self):
+        return self.likes.count()
+    
+    def number_of_saves(self):
+        return self.saves.count()
 
 
 class Comment(models.Model):
@@ -60,10 +86,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
-
-
-
-
-    

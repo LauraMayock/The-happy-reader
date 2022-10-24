@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+<h1>Age Range:</h1>
+
+{% for x in age %}
+<ul>
+    <li>{{ x.age_name }}</li>
+    <img style = 'max-height:14rem ;max-width:14rem;' src="{{x.age_image.url}}" alt="image">
+    <li>{{ x.slug }}</li>
+</ul>
+{% endfor %}
+</ul>
+</div>
+
+<!--{% for e in Genre.genre_image.all %}
+{{ Genre }}
+  <img style = 'max-height:14rem ;max-width:14rem;' src="{{image.images.url}}" alt="image">
+{% endfor %}-->
+
+{% endblock %}

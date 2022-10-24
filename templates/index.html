@@ -1,17 +1,77 @@
 {% extends "base.html" %}
 
+
+
 {% block content %}
 <body>
-<div class="view" style="background-image: url(https://res.cloudinary.com/dyhess8yw/image/upload/v1665136148/project%204/little-boy-child-covering-face-with-book_1_chtrz8.jpg); background-repeat: no-repeat; background-size: cover; img-responsive">
-    <div class="container py-8">
-      <header class="text-center text-white py-5">
-        <h1 class="display-4 font-weight-bold mb-4">The happy reader</h1>
-        <p class="lead mb-0">Everyone is a reader... Some just havent found the perfect book yet.</p>
-        </p>
-      </header>
+    <div class="card bg-dark text-white">
+        <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666294024/project%204/Welcome-to-the-children-learning-reading-Program-review-website_mqxnfq.avif" class="card-img" alt="childrens books on shelf"/>
+        <div class="card-img-overlay bottom-left">
+          <h5 class="card-title">The Happy reader</h5>
+          <p class="card-text">
+            Everyone is a reader... <br> Some just havent found the perfect book yet.
+          </p>
+        </div>
     </div>
-  </div>
-        
+
+<!-- Age range-->
+<section>
+    <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="age">
+              <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666288334/et13ufrej7jupi6y7lxr.jpg" alt="Lights" style="width:100%">
+              <div class="caption">
+                <p>0-2</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="age">
+              <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666288334/et13ufrej7jupi6y7lxr.jpg" alt="Nature" style="width:100%">
+              <div class="caption">
+                <p>3-5</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="age">
+              <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666288334/et13ufrej7jupi6y7lxr.jpg" alt="Fjords" style="width:100%">
+              <div class="caption">
+                <p>6-8</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="age">
+              <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666288334/et13ufrej7jupi6y7lxr.jpg" alt="Lights" style="width:100%">
+              <div class="caption">
+                <p>9-11</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="age">
+              <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666288334/et13ufrej7jupi6y7lxr.jpg" alt="Nature" style="width:100%">
+              <div class="caption">
+                <p>Teens</p>
+              </div>
+            </a>
+          </div>
+        </div>
+</section>
+
+    
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -30,13 +90,15 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
                             </a>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i> <i class="fa-regular fa-bookmark"></i>
                                 {{ post.number_of_likes }}</p>
+                                {{ post.number_of_saves }}
                         </div>
                     </div>
                 </div>
