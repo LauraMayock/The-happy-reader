@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Post, age_range, Genre
+from .models import Post, age_range, book_author
+from .forms import BookReview
 
 
 class PostList(generic.ListView):
@@ -36,17 +37,27 @@ class PostDetail(View):
 
 
 
-def all_age(request):
-    age = age_range.objects.all()
-    return render(request, 'age.html',
-    {'age': age})
+def AgeBooks(request):
+    age_list = age_range.objects.all()
+    return render (request, 'age.html',
+        {'age_list': age_list})
 
-class GenderPost(View):
-    
-    model = Genre
-    template_name = "age.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['my_queryset'] = Topic.objects.all()
-        return context
+class BooksByAge(generic.DeleteView):
+    model = age_range
+
+
+##class AuthorListView(generic.ListView):
+  ##  """Generic class-based list view for a list of authors."""
+ ##   model = book_author
+ ##   paginate_by = 10
+
+
+##class AuthorDetailView(generic.DetailView):
+  ##  """Generic class-based detail view for an author."""
+  ##  model = book_author
+
+def add_review(request):
+    form = BookReview
+    return render(request, 'add_review.html', 
+    {'form': form})
