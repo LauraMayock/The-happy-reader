@@ -45,12 +45,15 @@
                         <a class="nav-link" href="{#}">Age Group</a>
                     </li>
                     
-                    {% if user.is_authenticated %}
+                    {% if user.is_authenticated %} 
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Saved Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'list_books' %}">Book Reviews</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'add-review' %}">Review a Book</a>
@@ -68,7 +71,7 @@
             </div>
         </div>
     </nav>
-    
+    Hi {{ user }}
         <section>
             
         {% block content %}

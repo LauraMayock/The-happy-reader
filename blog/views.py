@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Post, age_range, book_author
+from django.http import HttpResponseRedirect
 from .forms import BookReview
 
 
@@ -37,27 +38,39 @@ class PostDetail(View):
 
 
 
-def AgeBooks(request):
-    age_list = age_range.objects.all()
-    return render (request, 'age.html',
-        {'age_list': age_list})
+def List_Book(request):
+    book_list = Post.objects.all()
+    return render(request, 'book_list.html',
+    {'book_list': book_list})
 
 
-class BooksByAge(generic.DeleteView):
-    model = age_range
+def Show_Book(request, book_id):
+    books = Post,objects.get(pk=book_id)
+    return render(request, 'detailed_list.html',
+    {'book': book})
 
 
-##class AuthorListView(generic.ListView):
-  ##  """Generic class-based list view for a list of authors."""
- ##   model = book_author
- ##   paginate_by = 10
 
-
-##class AuthorDetailView(generic.DetailView):
-  ##  """Generic class-based detail view for an author."""
-  ##  model = book_author
-
-def add_review(request):
-    form = BookReview
+def Add_Review(request):
+    submitted = False
+    if request.method == "POST":
+        form = BookReview(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/add_review?submitted=True')
+    else:
+        form = BookReview
+        if 'submitted' in request.GET:
+            submitted = True
     return render(request, 'add_review.html', 
-    {'form': form})
+    {'form': form, 'submitted':submitted})
+
+
+
+class update_review(generic.ListView):
+    model = Post
+    queryset = Post.objects.all()
+    template_name = "reviews.html"
+
+
+
