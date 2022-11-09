@@ -72,6 +72,14 @@ class Post(models.Model):
         return self.saves.count()
 
 
+    def save(self, *args, **kwargs):
+
+
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
+
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
@@ -88,3 +96,12 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
+
+class Contact(models.Model):
+    name = models.CharField(max_length=158)
+    email = models.EmailField()
+    message = models.TextField()
+
+
+    def __str__(self):
+         return self.name

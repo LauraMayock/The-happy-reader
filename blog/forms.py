@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Post
+from .models import Post, Contact
 
 
 # Form for user to create a book review.
@@ -22,3 +22,8 @@ class BookReview(ModelForm):
         'author': forms.TextInput(attrs={'class': 'form-control'}),
         'book_author': forms.TextInput(attrs={'class': 'form-control'}),
     }
+
+class ContactForm(ModelForm):
+    class Meta:
+        model = Contact
+        fields = '__all__'
