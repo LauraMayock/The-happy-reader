@@ -47,13 +47,19 @@
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
+            <div>
+                <!-- Back to top button -->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            </div>
             <div class="row">
                 {% endif %}
                 {% endfor %}
 
             </div>
-        </div>
+        </div> 
     </div>
+            
+    
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
@@ -69,4 +75,7 @@
     {% endif %}
 </div>
 {%endblock%}
+
 </body>
+
+
