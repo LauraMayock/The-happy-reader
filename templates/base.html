@@ -27,39 +27,42 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-
-    <nav class="navbar-expand-lg navbar navbar-dark bg-dark">
-        <div class="container-fluid d-flex">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">The Happy Reader</span></a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                    </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="{#}">Age Group</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
-                    </li>
-                    
-                    {% if user.is_authenticated %} 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Saved Books</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'list-books' %}">Your Reviews</a>
+    
+    <nav class="mb-1 navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">The Happy Reader</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Age Group</a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+       </li>
+       
+       {% if user.is_authenticated %} 
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Saved Books</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'list-books' %}">Your Reviews</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'add-review' %}">Review a Book</a>
+                    </li>
+                    <li>
+                        Logged in: {{ user }}
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -76,7 +79,7 @@
     </nav>
     
 
-    Hi {{ user }}
+    
         <section>
             
         {% block content %}
