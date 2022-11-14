@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.utils.text import slugify
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -44,8 +45,8 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
-    book_author = models.ForeignKey('book_author', on_delete = models.SET_NULL, null=True)
-    age_range = models.ForeignKey('age_range', on_delete = models.SET_NULL, null=True)
+    book_author = models.ForeignKey('book_author', on_delete=models.CASCADE, null=True, related_name="author")
+    age_range = models.ForeignKey('age_range', on_delete = models.SET_NULL, null=True, related_name="age")
     genre = models.ForeignKey('Genre', on_delete = models.SET_NULL, null=True)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)

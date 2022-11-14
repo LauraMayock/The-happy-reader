@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from .models import Post, Contact
+from .models import Post, Contact, age_range
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import BookReview, ContactForm
 from django.contrib import messages
@@ -16,11 +16,10 @@ class PostList(generic.ListView):
 
 class PostDetail(View):
 
-
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status = 1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by(" -created_on")
+        comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id = self.request.user.id).exists():
             liked = True
@@ -45,16 +44,23 @@ def update_review(request, post_id):
     form = BookReview(request.POST or None, instance=book)
     if form.is_valid():
         form.save()
-        return redirect('list_books')
+        return redirect('list-books')
 
     return render(request, 'update_review.html',
     {'update_books': book, 'form': form})
 
 
 def list_book(request):
-    book_list = Post.objects.all().order_by("age_range").filter(author = request.user)
-    return render(request, 'book_list.html',
-    {'book_list': book_list})
+    if request.user.is_authenticated:
+        user = request.user.id
+        review = Post.objects.filter(author=user)
+        return render(request, 
+            'book_list.html', {'review': review})
+
+    else:
+        messages.success(request, ('You must log in.'))
+        return redirect('home')
+   
 
 
 def add_review(request):
@@ -96,3 +102,15 @@ def contact(request):
             submitted = True
     return render(request, 'contact.html',
     {'form': form, 'submitted': submitted})
+
+
+def age0_2(request):
+    age = age_range.objects.get(id=1).age.all()
+    return render(request, 'age0_2.html',
+    {'age': age})
+
+
+def age0_2(request):
+    age2 = age_range.objects.get(id=2).age.all()
+    return render(request, 'age0_2.html',
+    {'age2': age2})

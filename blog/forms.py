@@ -21,6 +21,9 @@ class BookReview(ModelForm):
         'title': forms.TextInput(attrs={'class': 'form-control'}),
         'author': forms.TextInput(attrs={'class': 'form-control'}),
         'book_author': forms.TextInput(attrs={'class': 'form-control'}),
+        'age_range': forms.TextInput(attrs={'class': 'form-control'}),
+        'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
+        'content': forms.TextInput(attrs={'class': 'form-control'}),
     }
 
 class ContactForm(ModelForm):

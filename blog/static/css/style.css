@@ -2,17 +2,13 @@ body {
     background-color: #F9FAFC;
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: lightslategray;
-}
-
+/*Nav bar buttons */ 
 .nav-item {
     padding: 0 14px;
     text-align: center;
   }
+
+
 
 /*footer*/ 
 .ms-3 {
@@ -42,7 +38,7 @@ body {
   }
   
   #myBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+    background-color: #445261; /* Add a dark-grey background on hover */
   }
 
 .thin {
@@ -107,14 +103,23 @@ body {
 }
 
 .post-title {
-    margin-top: 20%;
-    margin-left: 5%;
+    margin-top: 10%;
+    
 }
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color:#445261;
 }
+
+.blurb {
+    padding: 10px;
+}
+
+.age {
+    padding-left: 10px;
+    }
+
 
 .btn-signup {
     background-color: #23BBBB;
@@ -152,8 +157,8 @@ body {
 }
 
 
-
-contact us form 
+/* contact us form */
+ 
 
 input[type=text], input[type=email], textarea {
     width: 100%;
