@@ -106,11 +106,26 @@ def contact(request):
 
 def age0_2(request):
     age = age_range.objects.get(id=1).age.all()
-    return render(request, 'age0_2.html',
+    return render(request, 'age.html',
     {'age': age})
 
 
-def age0_2(request):
-    age2 = age_range.objects.get(id=2).age.all()
-    return render(request, 'age0_2.html',
-    {'age2': age2})
+def age3_5(request):
+    age = age_range.objects.get(id=2).age.all()
+    return render(request, 'age.html',
+    {'age': age})
+
+def age6_8(request):
+    age = age_range.objects.get(id=3).age.all()
+    return render(request, 'age.html',
+    {'age': age})
+
+def age9_11(request):
+    age = age_range.objects.get(id=4).age.all()
+    return render(request, 'age.html',
+    {'age': age})
+
+def ageteen(request):
+    age = age_range.objects.get(id=5).age.all()
+    return render(request, 'age.html',
+    {'age': age})
