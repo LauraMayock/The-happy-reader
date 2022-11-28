@@ -1,10 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Post, Contact, age_range
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from .forms import BookReview, ContactForm
 from django.contrib import messages
-
 
 
 class PostList(generic.ListView):
@@ -17,26 +16,26 @@ class PostList(generic.ListView):
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status = 1)
+        queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
-        if post.likes.filter(id = self.request.user.id).exists():
+        if post.likes.filter(id=self.request.user.id).exists():
             liked = True
         saved = False
-        if post.saves.filter(id = self.request.user.id).exists():
+        if post.saves.filter(id=self.request.user.id).exists():
             saved = True
 
         return render(
             request,
             "post_detail.html",
-             {
+            {
                 "post": post,
                 "comments": comments,
                 "liked": liked,
                 "saved": saved
             },
-             )
+            )
 
 
 def update_review(request, post_id):
@@ -46,22 +45,20 @@ def update_review(request, post_id):
         form.save()
         return redirect('list-books')
 
-    return render(request, 'update_review.html',
-    {'update_books': book, 'form': form})
+    return render(request, 'update_review.html', 
+    {'update_books': book, 'form':form})
 
 
 def list_book(request):
     if request.user.is_authenticated:
         user = request.user.id
         review = Post.objects.filter(author=user)
-        return render(request, 
-            'book_list.html', {'review': review})
+        return render(request, 'book_list.html', {'review': review})
 
     else:
         messages.success(request, ('You must log in.'))
         return redirect('home')
    
-
 
 def add_review(request):
     submitted = False
@@ -90,6 +87,10 @@ def delete_review(request, post_id):
 
 
 def contact(request):
+    """
+    Submits contact us form to the admin dashboars only 
+
+    """
     submitted = False
     if request.method == "POST":
         form = ContactForm(request.POST)
@@ -105,27 +106,45 @@ def contact(request):
 
 
 def age0_2(request):
+    """
+    Creates a view listing all the books for ages 0-2
+
+    """
     age = age_range.objects.get(id=1).age.all()
-    return render(request, 'age.html',
-    {'age': age})
+    return render(request, 'age.html', {'age': age})
 
 
 def age3_5(request):
+    """
+    Creates a view listing all the books for ages 3-5
+
+    """
     age = age_range.objects.get(id=2).age.all()
-    return render(request, 'age.html',
-    {'age': age})
+    return render(request, 'age.html', {'age': age})
+
 
 def age6_8(request):
+    """
+    Creates a view listing all the books for ages 6-8
+
+    """
     age = age_range.objects.get(id=3).age.all()
-    return render(request, 'age.html',
-    {'age': age})
+    return render(request, 'age.html', {'age': age})
+
 
 def age9_11(request):
+    """
+    Creates a view listing all the books for 9-11
+
+    """
     age = age_range.objects.get(id=4).age.all()
-    return render(request, 'age.html',
-    {'age': age})
+    return render(request, 'age.html', {'age': age})
+
 
 def ageteen(request):
+    """
+    Creates a view listing all the books for teens
+
+    """
     age = age_range.objects.get(id=5).age.all()
-    return render(request, 'age.html',
-    {'age': age})
+    return render(request, 'age.html', {'age': age})

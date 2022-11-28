@@ -5,26 +5,29 @@
 {% block content %}
 <body>
     <div class="card bg-dark text-dark">
-        <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666294024/project%204/Welcome-to-the-children-learning-reading-Program-review-website_mqxnfq.avif" class="card-img" alt="childrens books on shelf"/>
-        <div class="card-img-overlay bottom-left">
-          <h5 class="card-title">The Happy reader</h5>
-          <p class="card-text">
-           Everyone is a reader... <br> Some just havent found the perfect book yet.</br>
-            <p>Log in to review, comment or save a list of your childs favourite books.</p>
-          </p>
+        <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666294024/project%204/Welcome-to-the-children-learning-reading-Program-review-website_mqxnfq.avif" class="card-img" alt="Little girl reading a book">
+        <div class="card-img-overlay welcome">
+            <div class="text-light">
+          <p>Everyone is a reader... <br> Some just havent found the perfect book yet.</br>
+          </br>Review and search childrens books</p>
+        </div>
           {% if user.is_authenticated %}
-          <h3 class="text-center page-subtitle">Welcome {{ user }}</h3>
-          <a class="btn btn-homepage btn-styles" href="#">
-            My Books
+          <h3 class="text-light">Welcome {{ user }}</h3>
+          <a class="btn btn-dark" href="{% url 'list-books' %}">
+            Saved Books
           </a>
+          <a class="btn btn-dark" href="{% url 'add-review' %}">
+            Add a Review
+          </a>
+        
           {% else %}
           <a
-            class="btn btn-homepage btn-styles"
+            class="btn btn-dark"
             href="{% url 'account_login' %}"
             >Login</a
           >
           <a
-            class="btn btn-homepage mt-3 btn-styles"
+            class="btn btn-dark"
             href="{% url 'account_signup' %}"
             >Sign Up
           </a>
@@ -40,12 +43,14 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            </a>
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="age">{{ post.age_range }}</p>

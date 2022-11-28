@@ -2,8 +2,8 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+<h1 class="list">Book reviews:</h1>
 {% for x in review %}
-    <h1>Book reviews:</h1>
 
     <div class="masthead">
         <div class="container">
@@ -20,7 +20,7 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                   <!-- The featured image URL goes in the src attribute -->
                   {% if "placeholder" in post.featured_image.url %}
-                  <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                  <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg" width="100%">
                   {% else %}
                   <img src=" {{ x.featured_image.url }}" width="100%">
                   {% endif %}
@@ -32,10 +32,6 @@
                 <div class="col card mb-4  mt-3 left  top">
                     <div class="card-body">
                     <!-- The post content goes inside the card-text. -->
-                    <!-- Use the | safe filter inside the template tags -->
-                    <p class="card-text ">
-                    {{ x.content | safe }}
-                    </p>
                 <div class="row">
                     <div class="col-1">
                       <!-- The number of likes goes before the closing strong tag -->

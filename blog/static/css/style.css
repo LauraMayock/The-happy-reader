@@ -1,26 +1,57 @@
 body {
     background-color: #F9FAFC;
+      
 }
 
-/*Nav bar buttons */ 
+/*----------------------------------------Nav bar buttons */
+.navbar-brand {
+    font-size: 35px;
+    font-family: 'Kalam', cursive;
+}
+
+.dropdown {
+    margin: 5px;
+}
+
+.text{
+   color: rgba(255,255,255,.5)
+}
 .nav-item {
     padding: 0 14px;
     text-align: center;
   }
 
-
-
-/*footer*/ 
-.ms-3 {
-    padding-right: 15px;
+.nav-link:hover{
+    color:white;
 }
 
-.mb-3 {
-    padding-left: 25px;
-
+.dropdown-toggle:hover{
+    color:white;
 }
 
-/* Back to top button */
+.dropdown-toggle {
+    margin-top: -5px;
+}
+
+/*---------------------------------------- Text overlay on main image*/
+
+.welcome p {
+    background-color: #ffc10759;
+    width: 450px;
+    padding: 10px;
+    font-family: 'Kalam', cursive;
+    font-size: 25px;
+}
+
+.card-text{
+    font-weight: 600;
+}
+
+
+
+
+/*---------------------------------------- Back to top button */
+
 #myBtn {
    /* display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -50,6 +81,7 @@ body {
 }
 
 
+/*--------------------------------------------Book reviews on homepage*/
 .card {
     border: none;
     background-color: transparent;
@@ -73,6 +105,10 @@ body {
     text-transform: uppercase;
 }
 
+.list {
+    margin-top: 50px;
+}
+
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -89,6 +125,7 @@ body {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    margin-top: 10%;
 }
 
 
@@ -102,13 +139,14 @@ body {
     color: #E84610;
 }
 
+/*--------------------------------------------------------post_detail*/
 .post-title {
     margin-top: 10%;
     
 }
 
 .post-subtitle {
-    margin-left: 5%;
+    margin: 3%;
     color:#445261;
 }
 
