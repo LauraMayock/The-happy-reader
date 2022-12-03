@@ -4,30 +4,28 @@
 
 {% block content %}
 <body>
-    <div class="card bg-dark text-dark">
-        <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666294024/project%204/Welcome-to-the-children-learning-reading-Program-review-website_mqxnfq.avif" class="card-img" alt="Little girl reading a book">
-        <div class="card-img-overlay welcome">
-            <div class="text-light">
-          <p>Everyone is a reader... <br> Some just havent found the perfect book yet.</br>
-          </br>Review and search childrens books</p>
-        </div>
+    <div class="card">
+        <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1670083647/schoolteacher-reading-books-with-his-school-kids-in-library-4463654_1_1_gsqkvq.jpg" class="card-img" alt="children reading with their teacher">
+        <div class="card-img-overlay">
+            <div class="text-light welcome">
+          <p>Review and search childrens books</p>
           {% if user.is_authenticated %}
           <h3 class="text-light">Welcome {{ user }}</h3>
-          <a class="btn btn-dark" href="{% url 'list-books' %}">
+          <a class="btn btn-signup" href="{% url 'list-books' %}">
             Saved Books
           </a>
-          <a class="btn btn-dark" href="{% url 'add-review' %}">
+          <a class="btn btn-signup" href="{% url 'add-review' %}">
             Add a Review
           </a>
-        
+        </div>
           {% else %}
           <a
-            class="btn btn-dark"
+            class="btn btn-signup"
             href="{% url 'account_login' %}"
             >Login</a
           >
           <a
-            class="btn btn-dark"
+            class="btn btn-signup"
             href="{% url 'account_signup' %}"
             >Sign Up
           </a>
@@ -59,12 +57,15 @@
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                             </a>
-                                <p class="card-text">{{ post.excerpt }}</p>
+                                <p class="card-text text-dark">{{ post.excerpt }}</p>
                             
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i> <i class="fa-regular fa-bookmark"></i>
-                                {{ post.number_of_likes }}</p>
-                                {{ post.number_of_saves }}
+                            <p class="card-text text-muted h6">{{ post.created_on}} 
+                                <span class="counts">
+                                <i class="far fa-heart"></i>{{ post.number_of_likes }} 
+                                <i class="fa-thin fa-bookmark"></i>{{ post.number_of_saves }} 
+                            </span> 
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -91,7 +92,6 @@
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>

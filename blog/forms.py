@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Post, Contact
+from .models import Post, Contact, Comment
 
 
 # Form for user to create a book review.
@@ -30,3 +30,9 @@ class ContactForm(ModelForm):
     class Meta:
         model = Contact
         fields = '__all__'
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('body',)

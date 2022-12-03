@@ -19,3 +19,10 @@ function topFunction() {
 }
 
 
+// Event listener for delete button
+document.getElementById("delete").addEventListener("click", function(){
+alert("Are you sure you want to delete?");
+});
+
+//function deleteReview() {
+ // document.getElementById("demo").innerHTML = Date();

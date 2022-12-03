@@ -1,74 +1,39 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 {% block content %}
 
-<section class="Material-contact-section section-padding section-dark">
-    <div class="container">
+<section>
+    <div class="container fluid">
         <div class="row">
             <!-- Section Titile -->
-            <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
+            <div class="col-md-12 pt-5 text-light">
                 <h1 class="section-title">Love to Hear From You</h1>
             </div>
         </div>
-        <div class="row">
+        <div class="row text-light">
             <!-- Section Titile -->
-            <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
               <p>
                 The Happy Reader blog is a place to find a large array of books and book recommendations. Our mission is to help people find and share books that their children or the children in their lives have loved. 
                 We hope to our blog encourages even the most reluctant reader to find joy between the pages of a book.</p>
 
-              
-              <div class="find-widget">
-               Address: <a href="#">45 Deerpark Westport, Co.Mayo</a>
-              </div>
-              <div class="find-widget">
-                Phone:  <a href="#">+ 879-890-9767</a>
-              </div>
             </div>
             <!-- contact form -->
-            <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s"> 
-                <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+            <div class="text-light"> 
+              <form id="contact-form" method="post">
                     <!-- Name -->
                     {% csrf_token %}
-                    <div class="form-group label-floating">
-                      <label class="control-label" for="name">Name</label>
-                      <input class="form-control" id="name" type="text" name="name" required data-error="Please enter your name">
-                      <div class="help-block with-errors"></div>
-                    </div>
-                    <!-- email -->
-                    <div class="form-group label-floating">
-                      <label class="control-label" for="email">Email</label>
-                      <input class="form-control" id="email" type="email" name="email" required data-error="Please enter your Email">
-                      <div class="help-block with-errors"></div>
-                    </div>
-                    <!-- Subject -->
-                    <div class="form-group label-floating">
-                      <label class="control-label">Subject</label>
-                      <input class="form-control" id="msg_subject" type="text" name="subject" required data-error="Please enter your message subject">
-                      <div class="help-block with-errors"></div>
-                    </div>
-                    <!-- Message -->
-                    <div class="form-group label-floating">
-                        <label for="message" class="control-label">Message</label>
-                        <textarea class="form-control" rows="3" id="message" name="message" required data-error="Write your message"></textarea>
-                        <div class="help-block with-errors"></div>
-                    </div>
+                    {{ form|crispy }}
                     <!-- Form Submit -->
-                    <div class="form-submit mt-5">
-                        <button class="btn btn-outline-secondary" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
-                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                        <div class="clearfix"></div>
-                    </div>
-                    
+                    <button id="submitForm" class="btn btn-signup">Send</button>
                 </form>
             </div>
         </div>
     </div>
   </section>
 
-
-
 {% endblock %}
+
