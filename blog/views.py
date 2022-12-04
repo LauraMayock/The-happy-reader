@@ -135,12 +135,7 @@ def age0_2(request):
 
     """
     age = age_range.objects.get(id=1).age.all()
-    return render(request, 'age.html',
-     {
-                'age': age,
-                "comments": comments,
-            },
-        )
+    return render(request, 'age.html', {'age': age,},)
 
 
 

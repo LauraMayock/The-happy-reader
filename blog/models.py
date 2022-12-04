@@ -6,15 +6,6 @@ from django.utils.text import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-class book_author(models.Model):
-    book_author = models.CharField(max_length=50)
-    author_image = CloudinaryField('image', default="placeholder")
-    slug = models.SlugField(max_length=500, unique=True)
-    
-    def __str__(self):
-        return self.book_author
-
-    
 
 
 class Genre(models.Model):
@@ -43,9 +34,8 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
-    )
-    book_author = models.ForeignKey('book_author', on_delete=models.CASCADE, null=True, related_name="author")
+        User, on_delete=models.CASCADE, related_name="blog_posts")
+    book_author = models.CharField(max_length=200, null=True, blank=True)
     age_range = models.ForeignKey('age_range', on_delete = models.SET_NULL, null=True, related_name="age")
     genre = models.ForeignKey('Genre', on_delete = models.SET_NULL, null=True)
     featured_image = CloudinaryField('image', default='placeholder')
