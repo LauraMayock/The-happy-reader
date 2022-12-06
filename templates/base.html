@@ -76,15 +76,15 @@
                     {% endif %}
             
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn dropdown-toggle text" data-toggle="dropdown">
                               Age Groups
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="{{ 'age1' }}">Ages 0-2</a>
-                              <a class="dropdown-item" href="{{ 'age2' }}">Ages 3-5</a>
-                              <a class="dropdown-item" href="{{ 'age3' }}">Ages 6-8</a>
-                              <a class="dropdown-item" href="{{ 'age4' }}">Ages 9-11</a>
-                              <a class="dropdown-item" href="{{ 'age5' }}">Ages Teens</a>
+                              <a class="dropdown-item" href="{% url 'age-book1' %}">Ages 0-2</a>
+                              <a class="dropdown-item" href="{% url 'age-book2' %}">Ages 3-5</a>
+                              <a class="dropdown-item" href="{% url 'age-book3' %}">Ages 6-8</a>
+                              <a class="dropdown-item" href="{% url 'age-book4' %}">Ages 9-11</a>
+                              <a class="dropdown-item" href="{% url 'age-book5' %}">Ages Teens</a>
                             </div>
                          
                         </div>

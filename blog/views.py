@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from .models import Post, Contact, age_range, Comment
+from .models import Post, age_range
 from django.http import HttpResponseRedirect
 from .forms import BookReview, ContactForm, CommentForm
 from django.contrib import messages
@@ -27,6 +27,9 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
+        saved = False
+        if post.saves.filter(id=self.request.user.id).exists():
+            saved = True
 
         return render(
             request,
@@ -36,11 +39,11 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": True,
                 "CommentForm": CommentForm,
-                "liked": liked
+                "liked": liked, 
+                "saved": saved,
             },
         )
 
-    
     def post(self, request, slug, *args, **kwargs):
 
         queryset = Post.objects.filter(status=1)
@@ -49,6 +52,9 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
+        saved = False
+        if post.saves.filter(id=self.request.user.id).exists():
+            saved = True
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -69,6 +75,7 @@ class PostDetail(View):
                 "commented": True,
                 "comment_form": comment_form,
                 "liked": liked,
+                "saved": saved, 
             },
         )
 
@@ -135,11 +142,6 @@ def contact(request):
     {'form': form, 'submitted': submitted})
 
 
-def age(request, cats):
-    age_posts = Post.objects.filter(age_range=cats.replace('-',' '))
-    return render(request, 'age.html', {'cats': cats.title(), 'age_posts': age_posts})
-
-
 def age1(request):
     view = Post.objects.filter(age_range=1)
     return render(request, 'age.html', {'view': view})
@@ -172,3 +174,15 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class PostSave(View):
+    
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.savess.filter(id=request.user.id).exists():
+            post.saves.remove(request.user)
+        else:
+            post.saves.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))       

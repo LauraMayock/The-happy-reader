@@ -7,7 +7,12 @@ from .models import Post, Contact, Comment
 class BookReview(ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'author', 'book_author', 'age_range', 'genre', 'excerpt', 'content')
+        fields = (
+            'title', 'author', 
+            'book_author', 'age_range', 
+            'genre', 'excerpt', 
+            'content')
+
         labels = {
             'title': 'Book Title:',
             'author': 'Review Author',
@@ -25,6 +30,7 @@ class BookReview(ModelForm):
         'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
         'content': forms.TextInput(attrs={'class': 'form-control'}),
     }
+
 
 class ContactForm(ModelForm):
     class Meta:
