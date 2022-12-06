@@ -11,9 +11,6 @@
           <p>Review and search childrens books</p>
           {% if user.is_authenticated %}
           <h3 class="text-light">Welcome {{ user }}</h3>
-          <a class="btn btn-signup" href="{% url 'list-books' %}">
-            Saved Books
-          </a>
           <a class="btn btn-signup" href="{% url 'add-review' %}">
             Add a Review
           </a>
@@ -65,7 +62,6 @@
                             <p class="card-text text-muted h6">{{ post.created_on}} 
                                 <span class="counts">
                                 <i class="far fa-heart"></i>{{ post.number_of_likes }} 
-                                <i class="far fa-bookmark"></i>{{ post.number_of_saves }} 
                             </span> 
                             </p>
                         </div>

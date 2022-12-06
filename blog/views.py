@@ -176,18 +176,6 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class PostSave(View):
-    
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
-        if post.savess.filter(id=request.user.id).exists():
-            post.saves.remove(request.user)
-        else:
-            post.saves.add(request.user)
-
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))       
-
-
 def saved(request):
-    saves = Post.objects.filter(saves)
-    return render(request, 'saved.html', {'saves': saves})
+    save = Post.objects.filter(saves=all)
+    return render(request, 'saved.html', {'save': save})

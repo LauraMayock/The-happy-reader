@@ -13,7 +13,6 @@ urlpatterns = [
     path('age3', views.age3, name='age-book3'),
     path('age4', views.age4, name='age-book4'),
     path('age5', views.age5, name='age-book5'),
-    path('saved', views.saved, name='saved'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path('save/<slug:slug>', views.PostSave.as_view(), name='post_save'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'), 
