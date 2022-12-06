@@ -186,3 +186,8 @@ class PostSave(View):
             post.saves.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))       
+
+
+def saved(request):
+    saves = Post.objects.filter(saves)
+    return render(request, 'saved.html', {'saves': saves})
