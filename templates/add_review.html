@@ -7,28 +7,28 @@
     <div class="row">
         <div class="col-md-8 mt-1 offset-md-2">
     <h1>Create your own book review:</h1>
-    {% if submitted %}
-        Your Book review was Submitted Succesfully! 
-        Thank you for contributing.
+        {% if submitted %}
+            Your Book review was Submitted Succesfully! 
+            Thank you for contributing.
 
-    {% else %}
+{% else %}
     <div class="container">
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
     <form method=POST>
         {% csrf_token %}
         {{ form|crispy }}
-        <input type="submit" value="Update" 
-        class="btn btn-secondary">
-
+        <input type="submit" value="Submit" 
+        class="btn btn-signup mb-5 pb-3">
+{% endif %}
     </form>
 </div>
 </div>
-{% endif %}
 
-    {% else %}
-        <h1>Sorry. You  must be Logged In to create a review. </h1>
-        <a href="{% url 'account_login' %}">Login Here</a>
-    {% endif %}
+
+        {% else %}
+            <h1>Sorry. You  must be Logged In to create a review. </h1>
+            <a href="{% url 'account_login' %}">Login Here</a>
+        {% endif %}
         
 {% endblock %}

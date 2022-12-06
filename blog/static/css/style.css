@@ -168,16 +168,22 @@ body {
     color: #445261;
 }
 
-.post-link:hover,
-.page-link {
-    color:  #445261;
-}
-
 
 /*--------------------------------------------------------pagination*/
-.page-link li a{
-    color:#23BBBB;
+.pagination {
+    margin-bottom: 100px;
 }
+
+.post-link:hover,
+.page-link {
+    color:  white;
+}
+
+.page-link{
+    background-color:  #23BBBB;
+    color:white;
+}
+
 /*--------------------------------------------------------post_detail*/
 
 

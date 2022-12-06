@@ -8,12 +8,13 @@ urlpatterns = [
     path('update_review/<post_id>', views.update_review, name='update-review'),
     path('delete_review/<post_id>', views.delete_review, name='delete-review'),
     path("contact", views.contact, name="contact"),
-    path('age0-2', views.age0_2, name="age0-2"),
-    path('age3-5', views.age3_5, name="age3-5"),
-    path('age6-8', views.age6_8, name="age6-8"),
-    path('age9-11', views.age9_11, name="age9-11"),
-    path('age-teen', views.ageteen, name="ageteen"),
+    path('age/<str:cats>', views.age, name="age"),
+    path('age1', views.age1, name='age-book1'),
+    path('age2', views.age2, name='age-book2'),
+    path('age3', views.age3, name='age-book3'),
+    path('age4', views.age4, name='age-book4'),
+    path('age5', views.age5, name='age-book5'),
+    path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
-    
-    
+      
 ]

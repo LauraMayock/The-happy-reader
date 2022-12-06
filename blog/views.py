@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from .models import Post, Contact, age_range, Comment
 from django.http import HttpResponseRedirect
@@ -11,6 +11,11 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
+
+    def get_age_data(self, *args, **kwargs):
+        age_menu = age_range.objects.all()
+        context = super(PostList, self).get_context_data(*args, **kwargs)
+        context["age_menu"] = age_menu
 
 
 class PostDetail(View):
@@ -29,11 +34,12 @@ class PostDetail(View):
             {
                 "post": post,
                 "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": CommentForm()
+                "commented": True,
+                "CommentForm": CommentForm,
+                "liked": liked
             },
         )
+
     
     def post(self, request, slug, *args, **kwargs):
 
@@ -129,49 +135,40 @@ def contact(request):
     {'form': form, 'submitted': submitted})
 
 
-def age0_2(request):
-    """
-    Creates a view listing all the books for ages 0-2
-
-    """
-    age = age_range.objects.get(id=1).age.all()
-    return render(request, 'age.html', {'age': age,},)
+def age(request, cats):
+    age_posts = Post.objects.filter(age_range=cats.replace('-',' '))
+    return render(request, 'age.html', {'cats': cats.title(), 'age_posts': age_posts})
 
 
+def age1(request):
+    view = Post.objects.filter(age_range=1)
+    return render(request, 'age.html', {'view': view})
 
-def age3_5(request):
-    """
-    Creates a view listing all the books for ages 3-5
+def age2(request):
+    view = Post.objects.filter(age_range=2)
+    return render(request, 'age.html', {'view': view})  
 
-    """
-    age = age_range.objects.get(id=2).age.all()
-    return render(request, 'age.html', {'age': age})
+def age3(request):
+    view = Post.objects.filter(age_range=3)
+    return render(request, 'age.html', {'view': view})
 
+def age4(request):
+    view = Post.objects.filter(age_range=4)
+    return render(request, 'age.html', {'view': view})
 
-def age6_8(request):
-    """
-    Creates a view listing all the books for ages 6-8
-
-    """
-    age = age_range.objects.get(id=3).age.all()
-    return render(request, 'age.html', {'age': age})
-
-
-def age9_11(request):
-    """
-    Creates a view listing all the books for 9-11
-
-    """
-    age = age_range.objects.get(id=4).age.all()
-    return render(request, 'age.html', {'age': age})
+def age5(request):
+    view = Post.objects.filter(age_range=5)
+    return render(request, 'age.html', {'view': view})
 
 
-def ageteen(request):
-    """
-    Creates a view listing all the books for teens
 
-    """
-    age = age_range.objects.get(id=5).age.all()
-    return render(request, 'age.html', {'age': age})
+class PostLike(View):
+    
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
 
-
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
