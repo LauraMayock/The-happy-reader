@@ -7,15 +7,13 @@ from django.utils.text import slugify
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-
 class Genre(models.Model):
     genre_name = models.CharField(max_length=50)
     genre_image = CloudinaryField('image', default="placeholder")
     slug = models.SlugField(max_length=500, unique=True)
-    
+
     def __str__(self):
         return self.genre_name
-
 
 
 class age_range(models.Model):
@@ -36,8 +34,9 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts")
     book_author = models.CharField(max_length=200, null=True, blank=True)
-    age_range = models.ForeignKey('age_range', on_delete = models.SET_NULL, null=True, related_name="age")
-    genre = models.ForeignKey('Genre', on_delete = models.SET_NULL, null=True)
+    age_range = models.ForeignKey(
+        'age_range', on_delete=models.SET_NULL, null=True, related_name="age")
+    genre = models.ForeignKey('Genre', on_delete=models.SET_NULL, null=True)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -54,17 +53,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    
 
     def number_of_likes(self):
         return self.likes.count()
-    
+
     def number_of_saves(self):
         return self.saves.count()
 
-
     def save(self, *args, **kwargs):
-
 
         if not self.slug:
             self.slug = slugify(self.title)
@@ -87,12 +83,10 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
-
 class Contact(models.Model):
     name = models.CharField(max_length=158)
     email = models.EmailField()
     message = models.TextField()
 
-
     def __str__(self):
-         return self.name
+        return self.name

@@ -1,11 +1,11 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 {% load crispy_forms_tags %}
 
 <div class="masthead offset-md-2">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                 <!-- Post title goes in these h1 tags -->
                  <h1 class="post-title">{{ post.title }}</h1>
                  <h4>{{ post.book_author }}</h4>
                  <p class="card-text ">
@@ -13,13 +13,12 @@
                 </p>
              </div>
              <div class="d-none d-md-block col-md-5 masthead-image">
-                 <!-- The featured image URL goes in the src attribute -->
+                 <!-- The featured image URL or an alternitive if one isnt provided -->
                  {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg" width="100%">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" width="100%">
                 {% endif %}
-            <!-- Post author goes before the | the post's created date goes after -->
             <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
         </div>
         </div>
@@ -33,6 +32,7 @@
                 <div class="row">
                     <div class="col-1">
                         <strong>
+                            <!-- If logged in you can like.Simple changes when clicked or unclicked -->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
@@ -45,16 +45,9 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
+                            <!-- Shows number of likes -->
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
-                    </div>
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
-                        {% endwith %}
                     </div>
                 </div>
             </div>
@@ -72,42 +65,34 @@
                 <p class="font-weight-bold">
                     {{ post.author }} 
                     <span class=" text-muted font-weight-normal">
-                        <!-- The comment's created date goes here -->
                         {{ post.created_on }}
                     </span>
                 </p>
+                <!-- Comment section -->
             <div class="comments" style="padding: 10px;">
                 {{ post.excerpt }}
-           
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-               
                     <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                    </br>
+    	            <br>
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
-                            <!-- The comment's created date goes here -->
                             {{ comment.created_on }}
                         </span>
                     </p>
-                    <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
-                <!-- For later -->
+                <!-- Alert when comment is submitted -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your review is awaiting approval
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
-
                 <h3>Leave a review:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
@@ -116,6 +101,7 @@
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% else %}
+                <!-- Comment telling people to log in before reviewing -->
                 <h5 class="reviewh">You must log in to leave a review.</h5>
                 <a class="btn btn-signup" href="{% url 'account_login' %}">Login</a>
                 {% endif %}
