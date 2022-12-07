@@ -2,13 +2,13 @@
 
 ![The happy Reader]()
 
-OPENING PARAGRAPH-
+The Happy Reader is a Childrens Book Search and Review website, for users who would like to look up book reviews to help them decide the next book best suited for their child, and in turn to leave reviews on books to help others. Hopefully this well help your child grow a love for books that will last through out their life.
 
-You can view the live site here - <a href="" target="_blank"> The happy reader </a>
+You can view the live site here - <a href="https://the-happy-reader.herokuapp.com/" target="_blank"> The happy reader </a>
 
 # Objective
 
-The aim of this site is to deliver an interactive website that users can engage with via a user log in system to acess a book database in which they can engage with to leave comments, search books, bookmark their favourite books.
+The aim of this site is to deliver an interactive website that users can engage with via a user log in system to acess a book database in which they can engage with to leave comments and search books for books is perfecrt for their child.
 
 [Back to top](<#contents>)
 
@@ -17,21 +17,29 @@ The aim of this site is to deliver an interactive website that users can engage 
 ## Site Aims
 
 * To provide the user with a website that allows them to view book listings and reviews geared towards children
-* To easily find books that may be perfect for their child.
+* To easily find books that may spark a love of books for their child.
+* To allow the user the user to create, update and delete reviews
+* To provide the admin user with the ability to approve, update and delete book reviews in the frontend
+* To provide a clear and appropriate response to any user inputs or actions
 
 
 ## Agile Methodology
 
-The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board which can be seen here -  <a href="" target="_blank"> The happy reader Project </a>
+The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board which can be seen here -  <a href="https://github.com/users/LauraMayock/projects/3" target="_blank"> The happy reader Project </a>
 
 Through the use of the Kanban board in the projects view in Github, the project was divived into a few different sections:
+* No status
 * Backlog
 * Current Iteration
 * In Progress
 * Done
 
-![Kanban board github](https://github.com/users/LauraMayock/projects/3)
-Their layout.
+![Kanban board github](https://res.cloudinary.com/dyhess8yw/image/upload/v1670436094/Kamban_board_r9euxi.png)
+Layout.
+
+Github issues were used to create User Stories and any other Fixes or Updates for the project. This was where the project user was assigned, labels were added to show at a glance importance of tasks and help prioritise jobs. User story was added to the appropriate Iteration and the project. Each User Story, Fix or Update had a clear title, acceptance criteria and smaller tasks (if appropriate).
+
+Milestones were used to create Iterations. There were 3 Iterations each dated appropriately. User Stories were completed based on the current Iteration that was in progress.
 
 ### User Stories
 
