@@ -131,9 +131,15 @@ def delete_review(request, post_id):
     """
     Users can delete book reviews
     """
-    review = Post.objects.get(pk=post_id)
-    review.delete()
-    return redirect('list-books')
+    rev = Post.objects.get(pk=post_id)
+    context = {'rev': rev}
+
+    if request.method == 'POST':
+        rev.delete()
+        messages.success(request, ('You have deleted this review sucessfully.'))
+        return redirect('list-books')
+
+    return render(request, 'delete.html', context)
 
 
 def contact(request):

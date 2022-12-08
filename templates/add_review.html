@@ -25,7 +25,10 @@
         </div>
         <!-- Alert to say you  need to be logged in  --> 
         {% else %} 
-        <h1>Sorry. You must be Logged In to create a review. </h1>
+        <div class="text-light">
+            <h1>Sorry. You must be Logged In to create a review. </h1>
+        </div>
         <a href="{% url 'account_login' %}">Login Here</a> 
         {% endif %} 
+
         {% endblock %}

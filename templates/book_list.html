@@ -4,9 +4,9 @@
 {% if user.is_authenticated %} 
 {% for x in review %} 
 
-<div class="masthead offset-md-2">
-    <div class="container">
+<div class="masthead bg-white">
       <h1 class="list">Book reviews:</h1>
+      <div>
       <div class="row g-0">
         <div class="col-md-6 masthead-text">
           <h1 class="post-title">{{ x.title }}</h1>
@@ -17,7 +17,7 @@
         </div>
         <div class="d-none d-md-block col-md-4 masthead-image">
           <!-- The featured image URL if there isnt one provided a generic one --> 
-          {% if "placeholder" in post.featured_image.url %} 
+          {% if "placeholder" in x.featured_image.url %} 
           <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg" width="100%"> 
           {% else %} 
           <img src=" {{ x.featured_image.url }}" width="100%"> 
@@ -43,9 +43,11 @@
           </div>
         </div>
       </div>
+      <div class="pb-4">
       <!-- Update or review button -->
       <a href="{% url 'update-review' x.id %}" class="btn mb-3 btn-signup btn active">Update Review</a>
       <a href="{% url 'delete-review' x.id %}" class="btn mb-3 btn-outline-danger btn active">Delete Review</a>
+      </div>
     </div>
   </div> 
   {% endfor %} 

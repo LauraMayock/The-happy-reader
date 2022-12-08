@@ -8,8 +8,8 @@ class BookReview(ModelForm):
     class Meta:
         model = Post
         fields = (
-            'title', 'author', 
-            'book_author', 'age_range', 
+            'title', 'author',
+            'book_author', 'age_range',
             'genre', 'excerpt', 
             'content')
 
