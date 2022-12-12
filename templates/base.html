@@ -40,6 +40,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
 				</li>
+        <li>
 				<!-- Buttons will only show if logged in --> {% if user.is_authenticated %} <li class="nav-item">
 					<a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
 				</li>
@@ -51,17 +52,20 @@
 							<a class="dropdown-item" href="{% url 'add-review' %}">Add a Review</a>
 						</div>
 					</div>
-				</li> {% else %} <li class="nav-item">
+				</li> 
+        {% else %} 
+        <li class="nav-item">
 					<a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'account_login' %}">Login</a>
 				</li>
-				<li> {% endif %}
+				 {% endif %}
+        <li>
 					<!-- Dropdown showing books per age group -->
 					<div class="dropdown">
-						<button type="button" class="btn dropdown-toggle text" data-toggle="dropdown" aria-labelledby="dropdownMenuButton"> Age Groups </button>
-						<div class="dropdown-menu" aria-labelledby="dropdown-item">
+						<button type="button" class="btn dropdown-toggle text" data-toggle="dropdown"> Age Groups </button>
+						<div class="dropdown-menu">
 							<a class="dropdown-item" href="{% url 'age-book1' %}">Ages 0-2</a>
 							<a class="dropdown-item" href="{% url 'age-book2' %}">Ages 3-5</a>
 							<a class="dropdown-item" href="{% url 'age-book3' %}">Ages 6-8</a>
@@ -81,34 +85,41 @@
 				</div> {% endfor%} </div>
 		</div>
 	</div>
-	<section> {% block content %}
-		<!-- Content Goes here --> {% endblock content %} </section>
+	<section> 
+		
+	{% block content %}
+		<!-- Content Goes here --> 
+		
+	{% endblock content %} 
+
+</section>
 	<!-- Footer with links to social media and link to home page -->
-	<footer class="footer d-flex flex-wrap justify-content-between align-items-center pd-2 py-3 border-top bg-dark text-white">
+	<footer>
+	<div class="footer d-flex flex-wrap justify-content-between align-items-center pd-2 py-3 border-top bg-dark text-white">
 		<a class="mb-3 mb-md-0 text-white home" href="{% url 'home' %}">The Happy Reader</a>
-		</div>
-		<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-			<li class="ms-3">
-				<a href="http://www.twitter.com" target="_blank">
-					<i class="fab fa-twitter-square fa-lg ms-3 text-white"></i>
-				</a>
-			</li>
-			<li class="ms-3">
-				<a href="http://www.instagram.com" target="_blank">
-					<i class="fab fa-instagram-square fa-lg ms-3 text-white"></i>
-				</a>
-			</li>
-			<li class="ms-3">
-				<a href="https://www.youtube.com" target="_blank">
-					<i class="fab fa-youtube-square fa-lg ms-3 text-white"></i>
-				</a>
-			</li>
-			<li class="ms-3">
-				<a href="http://www.facebook.com" target="_blank">
-					<i class="fab fa-facebook-square fa-lg ms-3 text-white "></i>
-				</a>
-			</li>
-    </ul>
+		    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+			  <li class="ms-3">
+				    <a href="http://www.twitter.com" target="_blank">
+				    <i class="fab fa-twitter-square fa-lg ms-3 text-white"></i>
+			  	    </a>
+			    </li>
+		        <li class="ms-3">
+				    <a href="http://www.instagram.com" target="_blank">
+				  	<i class="fab fa-instagram-square fa-lg ms-3 text-white"></i>
+				    </a>
+			    </li>
+			    <li class="ms-3">
+				    <a href="https://www.youtube.com" target="_blank">
+				  	<i class="fab fa-youtube-square fa-lg ms-3 text-white"></i>
+				    </a>
+			    </li>
+			    <li class="ms-3">
+			    	<a href="http://www.facebook.com" target="_blank">
+				  	<i class="fab fa-facebook-square fa-lg ms-3 text-white "></i>
+				    </a>
+			    </li>
+			</ul>
+	</div>
 	</footer>
 	<!-- Javascript for alert system. Messages will disapear after a few seconds -->
 	<script>

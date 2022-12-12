@@ -1,11 +1,11 @@
 {% extends 'base.html' %} 
 {% load crispy_forms_tags %} 
 {% block content %} 
-{% if user.is_authenticated %} 
-{% for x in review %} 
+
 
 <div class="masthead bg-white">
       <h1 class="list">Book reviews:</h1>
+      {% for x in review %} 
       <div>
       <div class="row g-0">
         <div class="col-md-6 masthead-text">
@@ -43,15 +43,18 @@
           </div>
         </div>
       </div>
+      {% if user.is_authenticated %} 
+          {% if user.id == x.author.id %}
       <div class="pb-4">
       <!-- Update or review button -->
       <a href="{% url 'update-review' x.id %}" class="btn mb-3 btn-signup btn active">Update Review</a>
       <a href="{% url 'delete-review' x.id %}" class="btn mb-3 btn-outline-danger btn active">Delete Review</a>
+      {% endif %}
       </div>
-    </div>
-  </div> 
-  {% endfor %} 
-  {% else %}
+  
+ 
+     {% else %}
+  
   <!-- Warning system to show if you try to delete or amend posts that arent yours-->
   <h2>Access Denied</h2>
   <p>You can only delete or amend the reviews you have posted.</p> 
@@ -59,5 +62,9 @@
   <br> 
   Post Author: {{ x.author }}
   <br> 
-  {% endif %}
+
+</div>
+</div> 
+  {% endif %} 
+  {% endfor %}
   {% endblock %}

@@ -1,19 +1,21 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views import generic, View
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.views.generic import View, CreateView, ListView
 from .models import Post
+from django.utils.text import slugify
 from django.http import HttpResponseRedirect
-from .forms import BookReview, ContactForm, CommentForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import ContactForm, CommentForm, BookReview
 from django.contrib import messages
 
 
-class PostList(generic.ListView):
+class PostList(ListView):
     """
     Takes the Post Model and makes sure they are
-    approved and randomised them for the home page
+    approved and displayes them on the home page
     """
     model = Post
     template_name = "index.html"
-    queryset = Post.objects.filter(status=1).order_by("?")
+    queryset = Post.objects.filter(status=1).order_by('created_on')
     paginate_by = 6
 
 
@@ -83,6 +85,8 @@ def update_review(request, post_id):
     """
     book = Post.objects.get(pk=post_id)
     form = BookReview(request.POST or None, instance=book)
+    if book.author != request.user:
+        return redirect('This is not your review')
     if form.is_valid():
         form.save()
         return redirect('list-books')
@@ -107,25 +111,40 @@ def list_book(request):
         return redirect('home')
 
 
-def add_review(request):
+class AddPostView(LoginRequiredMixin, CreateView):
     """
-    Users can create book reviews that they have
-    created using a form
+    This view makes sure the user is logged in
+    before they can access the template
+    Calls the AddBookForm from forms.py to add
+    a book to the database
     """
-    submitted = False
-    if request.method == "POST":
-        form = BookReview(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/add_review?submitted=True')
-    else:
-        form = BookReview
-        if 'submitted' in request.GET:
-            submitted = True
-    return render(request,
-                  'add_review.html',
-                  {'form': form, 'submitted': submitted})
+    template_name = 'add_review.html'
+    form_class = BookReview
 
+    def get_success_url(self):
+        """
+        sets the reverse url for the
+        successful addition of the book
+        to the database
+        """
+        return reverse('list-books')
+
+    def form_valid(self, form):
+        """_summary_
+        validates the form and adds a success message
+        to the template once abook is successfully added
+        Sets the automatic slug for the object created
+        from the user input on the title and book author
+        fields
+        """
+        form.instance.author = self.request.user
+        messages.success(
+            self.request,
+            'You have added a new book and it has been flagged for approval!')
+        form.slug = slugify(form.instance.title)
+        return super().form_valid(form)
+
+    
 
 def delete_review(request, post_id):
     """
