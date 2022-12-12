@@ -51,7 +51,7 @@
       <a href="{% url 'delete-review' x.id %}" class="btn mb-3 btn-outline-danger btn active">Delete Review</a>
       {% endif %}
       </div>
-  
+      <hr>
  
      {% else %}
   
@@ -62,9 +62,8 @@
   <br> 
   Post Author: {{ x.author }}
   <br> 
-
-</div>
-</div> 
   {% endif %} 
   {% endfor %}
+</div>
+</div> 
   {% endblock %}

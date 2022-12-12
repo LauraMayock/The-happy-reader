@@ -1,31 +1,27 @@
 {% extends "base.html" %} 
 {% load crispy_forms_tags %} 
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> 
-{% block content %} 
-<section>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> {% block content %} <section>
   <div class="container fluid">
     <div class="row">
       <!-- Section Titile -->
       <div class="col-md-12 pt-5 text-light">
-        <h1 class="section-title">Love to Hear From You</h1>
+        <h3 class="section-title">Love to Hear From You</h3>
       </div>
     </div>
     <div class="row text-light">
       <!-- Section Titile -->
       <p> The Happy Reader blog is a place to find a large array of books and book recommendations. 
-        Our mission is to help people find and share books that their children or the children in their lives have loved. 
-        We hope to our blog encourages even the most reluctant reader to find joy between the pages of a book.</p>
+        Our mission is to help people find and share books that their children or 
+        the children in their lives have loved. We hope to our blog encourages even 
+        the most reluctant reader to find joy between the pages of a book.</p>
     </div>
     <!-- contact form -->
     <div class="text-light">
-      <form id="contact-form" method="post">
-        {% csrf_token %} 
-        {{ form|crispy }}
+      <form id="contact-form" method="post"> {% csrf_token %} {{ form|crispy }}
         <!-- Form Submit -->
         <button id="submitForm" class="btn btn-signup">Send</button>
       </form>
     </div>
   </div>
-  </div>
-</section> {% endblock %}
+{% endblock %}

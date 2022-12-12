@@ -40,7 +40,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
 				</li>
-        <li>
+                <li>
 				<!-- Buttons will only show if logged in --> {% if user.is_authenticated %} <li class="nav-item">
 					<a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
 				</li>
@@ -53,15 +53,14 @@
 						</div>
 					</div>
 				</li> 
-        {% else %} 
-        <li class="nav-item">
+            {% else %} 
+                <li class="nav-item">
 					<a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'account_login' %}">Login</a>
 				</li>
 				 {% endif %}
-        <li>
 					<!-- Dropdown showing books per age group -->
 					<div class="dropdown">
 						<button type="button" class="btn dropdown-toggle text" data-toggle="dropdown"> Age Groups </button>
@@ -72,6 +71,7 @@
 							<a class="dropdown-item" href="{% url 'age-book4' %}">Ages 9-11</a>
 							<a class="dropdown-item" href="{% url 'age-book5' %}">Ages Teens</a>
 						</div>
+					</div>
 				</li>
 			</ul>
 		</div>

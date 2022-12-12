@@ -202,7 +202,6 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 * Styles are consistent with the rest of the website
 * The page is fully responsive
 
-![Log In page phone](/the_happy_reader/Docs/signin%20phone.png)
 
 ## Sign Up Page
 
@@ -331,6 +330,22 @@ Pagination is implemented on some pages but it could definitely be expanded to m
 [Back to top](<#contents>)
 
 # Testing
+
+## Validation
+
+### Html Validation
+
+Html validation was done with [https://validator.w3.org/nu/](https://validator.w3.org/nu/). The deployed link from the site was used the below errors were highlighted.
+
+[HTML VALIDATION](/the_happy_reader/Docs/HTML%20error.png)
+
+After researching the error message I learned on Slack that this issue was caused by a closing tag being in the wrong place. It needed to be placed after.
+
+
+
+#### **Home Page**
+![Home Page Html Validation](docs/images/validation/home-page.png)
+
 
 
 [Back to top](<#contents>)

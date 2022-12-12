@@ -9,33 +9,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2 text-light">
-            <h3>{% trans "Sign In" %}</h3>
-
-            <p>{% blocktrans %}Welcome back to The Happy Reader blog. To add a review, like or save a review, please log in. If
-                you
-                have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-                first.{% endblocktrans %}</p>
-        </div>
+      <div class="col-md-8 mt-3 offset-md-2 text-light">
+        <h3>{% trans "Sign In" %}</h3>
+        <p>{% blocktrans %}Welcome back to The Happy Reader blog. To add a review, like or save a review, please log in. If you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %} </p>
+      </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2 text-light">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form|crispy }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-            </form>
-        </div>
-        </div>
-    </br>
+      <div class="col-md-8 mt-3 offset-md-2 text-light">
+        <form class="login" method="POST" action="{% url 'account_login' %}"> {% csrf_token %} {{ form|crispy }} {% if redirect_field_value %} <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> {% endif %} <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+        </form>
+      </div>
     </div>
-</div>
-<div class="container offset-md-4">
-    <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1670153660/pexels-victoria-akvarel-1094072_nvu8wj.jpg" class="card-img" alt="two children reading in the garden"style="width:50%;height:50%;">
-    </div>
-</div>
-</div>
+    <br>
+  <div class="container offset-md-3">
+  <img src="https://res.cloudinary.com/dyhess8yw/image/upload/v1670153660/pexels-victoria-akvarel-1094072_nvu8wj.jpg" class="card-img" alt="two children reading in the garden" style="width:50%;height:50%;">
+  </div>
 {% endblock %}

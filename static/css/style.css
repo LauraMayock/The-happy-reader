@@ -176,6 +176,7 @@ body {
 .post-link:hover,
 .page-link {
     color:  white;
+    background-color: #23BBBB;
 }
 
 .page-link{

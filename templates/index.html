@@ -56,10 +56,10 @@
         </div> 
         {% if forloop.counter|divisibleby:3 %}
       </div>
-    </div>
-    <div class="row"> 
-        {% endif %} 
+      {% endif %} 
         {% endfor %} 
+    </div>    
+      <div class="row"> 
     </div>
     <div>
       <!-- Back to top button -->
@@ -85,7 +85,7 @@
         </ul>
     </nav>
   </div>
-  
+
   <script>
     // Learned from  W3school
     let mybutton = document.getElementsById("myBtn");

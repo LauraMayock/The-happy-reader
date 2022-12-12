@@ -55,23 +55,22 @@
     </div>
     <div class="row">
         <div class="col">
-            <hr>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Reviews:</h3>
+            <h3>Review by {{post.author}}:</h3>
             <div class="card-body">
-                <p class="font-weight-bold">
-                    {{ post.author }} 
                     <span class=" text-muted font-weight-normal">
                         {{ post.created_on }}
                     </span>
                 </p>
-                <!-- Comment section -->
             <div class="comments" style="padding: 10px;">
                 {{ post.excerpt }}
+                <hr>
                 {% for comment in comments %}
+                 <!-- Comment section -->
+                 Comments:
                     <p class="font-weight-bold">
     	            <br>
                         {{ comment.name }}
