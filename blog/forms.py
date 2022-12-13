@@ -17,7 +17,8 @@ class BookReview(forms.ModelForm):
             'content')
 
     widgets = {
-        'title': forms.TextInput(attrs={'class': 'form-control'}),
+        'title': forms.TextInput(attrs={'class': 'form-control',
+                                        'label': 'name'}),
         'book_author': forms.TextInput(attrs={'class': 'form-control'}),
         'age_range': forms.Select(attrs={'class': 'form-control'}),
         'genre': forms.Select(attrs={'class': 'form-control'}),

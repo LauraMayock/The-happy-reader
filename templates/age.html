@@ -3,7 +3,7 @@
 {% if view %} 
 <body>
     <!-- Books filtered by age -->
-    <div class="col-12 mt-3">
+    <div class="col-md-12 pt-5">
       <div class="row"> 
         {% for x in view %} 
         <div class="col-md-8 mb-3">
@@ -12,9 +12,9 @@
                 <div class="image-container">
                   {% if "placeholder" in x.featured_image.url %}
                     <img class="card-img-top"
-                        src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg" alt="Childrens books on a shelf">
+                        src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg" alt="Childrens books on a shelf" style="width : 100%; height : 100%">
                   {% else %}
-                    <img class="card-img-top" src=" {{ x.featured_image.url }}">
+                    <img class="card-img-top"style="width : 100%; height : 100%" src=" {{ x.featured_image.url }}">
                   {% endif %}
                     <div class="image-flash">
                       <p class="age">{{ x.age_range }}</p>
@@ -50,32 +50,25 @@
 </body>
   <!---Code for button up -->
   <script>
-       // Learned from  W3school
-       let mybutton = document.getElementsById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+  // Learned from  W3school
+  let mybutton = document.getElementById("myBtn");
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {
+    scrollFunction();
+   };
+  
+   function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
   }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0; 
-}
-
-
-// Event listener for delete button
-document.getElementById("delete").addEventListener("click", function(){
-alert("Are you sure you want to delete?");
-});
-
-  </script>
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+  }
+</script>
   
   {% endblock %}
