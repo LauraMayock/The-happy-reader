@@ -144,7 +144,6 @@ class AddPostView(LoginRequiredMixin, CreateView):
         form.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
-    
 
 def delete_review(request, post_id):
     """
@@ -155,7 +154,8 @@ def delete_review(request, post_id):
 
     if request.method == 'POST':
         rev.delete()
-        messages.success(request, ('You have deleted this review sucessfully.'))
+        messages.success(request,
+                         ('You have deleted this review sucessfully.'))
         return redirect('list-books')
 
     return render(request, 'delete.html', context)

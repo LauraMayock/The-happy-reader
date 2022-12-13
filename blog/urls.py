@@ -14,5 +14,5 @@ urlpatterns = [
     path('age4', views.age4, name='age-book4'),
     path('age5', views.age5, name='age-book5'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
-    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'), 
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
 ]

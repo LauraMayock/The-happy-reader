@@ -9,6 +9,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Genre(models.Model):
+    """
+    Genre table
+    """
     genre_name = models.CharField(max_length=50)
     genre_image = CloudinaryField('image', default="placeholder")
     slug = models.SlugField(max_length=500, unique=True)
@@ -18,6 +21,9 @@ class Genre(models.Model):
 
 
 class age_range(models.Model):
+    """
+    Age table
+    """
     age_name = models.CharField(max_length=50)
     age_image = CloudinaryField('image', default="placeholder")
     slug = models.SlugField(max_length=500, unique=True)
@@ -30,6 +36,9 @@ class age_range(models.Model):
 
 
 class Post(models.Model):
+    """
+    Main blog post
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -66,11 +75,15 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
-    
+
     def get_absolute_url(self):
         return reverse('list-books')
 
+
 class Comment(models.Model):
+    """
+    Comments table
+    """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=80)

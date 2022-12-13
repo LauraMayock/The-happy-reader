@@ -6,7 +6,7 @@ from .models import Post, Contact, Comment
 # Form for user to create a book review.
 class BookReview(forms.ModelForm):
     """
-
+    Creates a form based on the Post model
     """
     class Meta:
         model = Post
@@ -27,12 +27,18 @@ class BookReview(forms.ModelForm):
 
 
 class ContactForm(ModelForm):
+    """
+    Contact form
+    """
     class Meta:
         model = Contact
         fields = '__all__'
 
 
 class CommentForm(forms.ModelForm):
+    """
+    Comment form
+    """
     class Meta:
         model = Comment
         fields = ('body',)

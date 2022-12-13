@@ -264,4 +264,15 @@ body {
 
 
 /*--------------------------------------------------------Media Query*/
+@media screen and (max-width: 375px) {
 
+.blog {
+    margin-top: 200px;
+}
+
+.welcome {
+    margin-top: 150px;
+    background: #343a40;
+}
+
+}

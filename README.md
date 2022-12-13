@@ -341,14 +341,38 @@ Html validation was done with [https://validator.w3.org/nu/](https://validator.w
 
 After researching the error message I learned on Slack that this issue was caused by a closing tag being in the wrong place. It needed to be placed after.
 
+### CSS Validation
+
+The stylesheet was validated using [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)
+
+![Stylesheet validation](/the_happy_reader/Docs/css%20validation.png)
 
 
-#### **Home Page**
-![Home Page Html Validation](docs/images/validation/home-page.png)
+### Python Validation
 
+Python code was validated using [Code institues Python validator](https://pep8ci.herokuapp.com/#)
 
+Only minor errors such as missing blank spacing or whitespace. These were rectified easily.
 
-[Back to top](<#contents>)
+### Javascript Validation
+
+Javascript was validated using [jshint](https://jshint.com/)
+
+Apart from minor errors such as semicolans missing the validations was a success. All minor errors
+were delt with easily.
+
+### Lighthouse Testing
+
+# Home page
+
+Lighthouse testing [Lighthouse testing](/the_happy_reader/Docs/lighthouse%20for%20homepage.png)
+The ligth house testing came up quite poor especially in the Preformance section and Best Practice. 
+
+* I removed two unnecessary google font links in my code. 
+* Compressed the  main images and gave images a height and width.
+
+[Lighthouse final results](/the_happy_reader/Docs/lighhouse%20home%20final%20test.png)
+
 
 # Deployment
 
@@ -475,7 +499,7 @@ A copy of the GitHub Repository can be made by forking the GitHub account. Chang
 # Credits
 
 * [Crispy Forms Fix](https://stackoverflow.com/questions/65133364/django-crispy-forms-is-not-working-correctly)
-* []()
+* [Scroll button](https://www.w3schools.com/)
 * []()
 * [Pexcel](https://www.pexels.com/)
 * []()
