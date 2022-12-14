@@ -1,18 +1,10 @@
 # **The happy Reader - Project Portfolio 4**
 
-<#contents>
-
 ![The happy Reader](/the_happy_reader/Docs/mockup.png)
 
 The Happy Reader is a Children's Book Search and Review website for users who would like to look up book reviews to help them decide the next book best suited for their child and, in turn, to leave reviews on books to help others. Hopefully, this helps your child grow a love for books that will last through out their life.
 
 You can view the live site here - <a href="https://the-happy-reader.herokuapp.com/" target="_blank"> The happy reader </a>
-
-# Objective
-
-This site aims to deliver an interactive website that users can engage with via a user log-in system to access a book database in which they can comment and search books for books that are perfect for their child.
-
-[Back to top](<#contents>)
 
 # User Experience (UX)
 
@@ -117,6 +109,7 @@ Milestones were used to create Iterations. There were 3 Iterations, each dated a
 </details>
 
 ## Database Schema
+
 <details> <summary>Database layout using Lucidcharts</summary>
 
 ![Database Schema](/the_happy_reader/Docs/Org%20chart.png)
@@ -135,7 +128,7 @@ The Home page, Log-in, Signup Age group and Contact pages can be accessed by all
 
 The color scheme chosen was a dark, almost black colour with white contrast and a bright green used as highlights. I chose colours that would allow the imagery to stand out.
 
-![Site colour scheme](/the_happy_reader/Docs/colours.png)
+![Site colour scheme](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029463/colours_ziityz.png)
 
 ### Typography
 One font was chosen for this website, and that was Source Sans Pro from google fonts. It is clear and simple to read. 
@@ -155,7 +148,7 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
     * If the user logs in or signs up, those two tabs are removed to be replaced with a log-out tab.
 
-    ![Log out tab](/the_happy_reader/Docs/nav-logged-out.png)
+    ![Log out tab](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029458/nav_logged_out_dqyeod.png)
 
     * Once the user logs in or signs up, a completely new tab appears called Reviews, which is essentially the user's page
 
@@ -163,16 +156,16 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
  * The Home Page page of the website that's visible first when the site loads. It is designed that the purpose of the website easily determined.
 
- ![Homepage Desktop](/the_happy_reader/Docs/Main%20screen%20L.png)
+ ![Homepage Desktop](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029471/Main_screen_T_pfuonv.png)
 
- ![Homepage Mobile](/the_happy_reader/Docs/main%20screen%20S.png)
+ ![Homepage Mobile](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029467/main_screen_S_bp7nww.png)
 
 
  * There is a large hero image to catch the user's eye, the site name, a call to action with a log in and signup button. If the user logs in, an alert appears to confirm login, and a welcome message addressing the user by username and two buttons which link to the user's reveiws or to creat a reveiw appears.
 
-  ![Homepage Logged In](/the_happy_reader/Docs/Logged%20in.png)
+  ![Homepage Logged In](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029459/Logged_in_owgwor.png)
 
-  ![Homepage Logged Out](/the_happy_reader/Docs/logged%20out.png)
+  ![Homepage Logged Out](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029459/logged_out_uunr9k.png)
 
  * Below the hero image is a selection of book reviews clearly marked by age for the users easy. This secition draws from the entire database of approved books and those with uploaded book images, in random order. If the user clicks on a books image or title, the link brings the user to that book's page.
  
@@ -185,11 +178,11 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
  * When an age range is chosen by the user they are brought to a page showing only the books recommended for that age group.
  
 
- ![Age Range Desktop Page](/the_happy_reader/Docs/age%20range%20page.png)
+ ![Age Range Desktop Page](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029447/age_range_page_p5bevl.png)
 
 ## Log In Page
 
-  ![Log In page desktop](/the_happy_reader/Docs/signin%20d.png)
+  ![Log In page desktop](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029458/sign_in_desktop_ugczpv.png)
  
 
 * The Log In page is accessed from either the navigation bar or a button on the homepage.
@@ -201,7 +194,7 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 ## Sign Up Page
 
-![Sign Up page desktop](/the_happy_reader/Docs/signup%20p.png)
+![Sign Up page desktop](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029390/signup_d_eqyqov.png)
 
 * The Sign Up page is accessed from either the navigation bar or a button on the homepage.
 * The Sign Up page contains a link to the Log In page for the user who may have misclicked and already has an account.
@@ -214,7 +207,7 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 ## Log Out Page
 
-![Log out page desktop](/the_happy_reader/Docs/logout%20d.png)
+![Log out page desktop](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029386/logout_d_vb2kqd.png)
 
 * The Log Out page can only be accessed from the navigation bar and only when the user is logged in.
 * The Log Out page has a button for users to confirm they wish to log out.
@@ -226,9 +219,7 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 * The user must be logged in to review a book
 
-![Log in to review](/the_happy_reader/Docs/reveiw%20dropdown.png)
-
-![Review page](/the_happy_reader/Docs/create%20a%20review.png)
+![Review page](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029422/create_a_review_ven6eo.png)
 
 * If the user isn't logged in, text informs the user to log in to review.
 
@@ -237,7 +228,7 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 * The review button at the top of the page brings the user to the review section at the bottom.
 * Once the user reviews, they receive an alert that their review has been flagged for approval.
 
-![Review added alert](/the_happy_reader/Docs/success%20alert.png)
+![Review added alert](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029374/success_alert_vvl1rn.png)
 
 * Once the review is approved it will appear with the other reviews.
 
@@ -246,9 +237,7 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 * When the user is logged in they can view all the reviews they have created in the Your Reviews section in the dropdown or through the button on the homepage.
 
-![Navbar Your reviews](/the_happy_reader/Docs/reveiw%20dropdown.png)
-
-![Review page](/the_happy_reader/Docs/revie.png)
+![Navbar Your reviews](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029431/reveiw_dropdown_hm03jv.png)
 
 * From here the user can see all their reviews. One approved or not.
 * The user can choose from here to either amend or delete a review.
@@ -260,7 +249,7 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 * The user also has the ability to delete reviews that they have created in the 'Your reviews' page.
 
-![Delete page](/the_happy_reader/Docs/delete%20page.png)
+![Delete page](https://res.cloudinary.com/dyhess8yw/image/upload/v1671029379/delete_page_xjxbno.png)
  
 * If the user decides to delete their review, they are brought to a delete review page, where they are asked to confirm whether they wish to delete the review. If they decide to delete the review. If they choose the delete button they will get an alert stating that the review was deleted sucessfully if they choose to cancel it will revert them back to their reviews page.
 

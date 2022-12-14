@@ -33,7 +33,7 @@
                     {% if "placeholder" in post.featured_image.url %} 
                     <img class="card-img-top" src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg" style="width:100%; height:100%" alt="Image of front of book"> 
                     {% else %} 
-                    <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Image of a childs book shelf"style="width:100%; height:100%;">
+                    <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Image of a childs book shelf" style="width:100%; height:100%;">
                 {% endif %} 
                 <div class="image-flash">
                   <p class="age">{{ post.age_range }}</p>
@@ -78,7 +78,7 @@
         </ul>
     </nav>
   </div>
-
+</div>
 <script>
   // Learned from  W3school
   let mybutton = document.getElementById("myBtn");
