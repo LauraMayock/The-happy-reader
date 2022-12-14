@@ -4,10 +4,10 @@
 
 <head>
 	<title>The Happy Reader</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}" />
-
+	<!--Favicorn-->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Kids book review blog">
@@ -45,15 +45,13 @@
 				<!-- Buttons will only show if logged in --> {% if user.is_authenticated %} <li class="nav-item">
 					<a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
 				</li>
-				<li>
 					<div class="dropdown show">
 						<button type="button" class="btn dropdown-toggle text" data-toggle="dropdown"> Reviews </button>
 						<div class="dropdown-menu">
 							<a class="dropdown-item" href="{% url 'list-books' %}">Your Reviews</a>
 							<a class="dropdown-item" href="{% url 'add-review' %}">Add a Review</a>
 						</div>
-					</div>
-				</li> 
+					</div> 
             {% else %} 
                 <li class="nav-item">
 					<a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
@@ -83,9 +81,11 @@
 			<div class="col-md-8 offset-md-2"> {% for message in messages %} <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
 					{{ message | safe }}
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div> {% endfor%} </div>
+			</div> 
+			{% endfor%} 
 		</div>
 	</div>
+</div>
 	<section> 
 		
 	{% block content %}
@@ -93,7 +93,7 @@
 		
 	{% endblock content %} 
 
-</section>
+    </section>
 	<!-- Footer with links to social media and link to home page -->
 	<footer>
 	<div class="footer d-flex flex-wrap justify-content-between align-items-center pd-2 py-3 border-top bg-dark text-white">

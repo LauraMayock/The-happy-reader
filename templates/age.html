@@ -12,9 +12,9 @@
                 <div class="image-container">
                   {% if "placeholder" in x.featured_image.url %}
                     <img class="card-img-top"
-                        src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg" alt="Childrens books on a shelf" style="width : 100%; height : 100%">
+                        src="https://res.cloudinary.com/dyhess8yw/image/upload/v1666291002/shutterstock_587276996-800x500_kcsyxi.jpg" alt="Childrens books on a shelf" style="width : 50%; height : 50%">
                   {% else %}
-                    <img class="card-img-top"style="width : 100%; height : 100%" src=" {{ x.featured_image.url }}">
+                    <img class="card-img-top"style="width : 50%; height : 50%" src=" {{ x.featured_image.url }}">
                   {% endif %}
                     <div class="image-flash">
                       <p class="age">{{ x.age_range }}</p>

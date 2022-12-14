@@ -1,6 +1,8 @@
 # **The happy Reader - Project Portfolio 4**
 
-![The happy Reader]()
+<#contents>
+
+![The happy Reader](/the_happy_reader/Docs/mockup.png)
 
 The Happy Reader is a Childrens Book Search and Review website, for users who would like to look up book reviews to help them decide the next book best suited for their child, and in turn to leave reviews on books to help others. Hopefully this well help your child grow a love for books that will last through out their life.
 
@@ -164,8 +166,6 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
  ![Homepage Desktop](/the_happy_reader/Docs/Main%20screen%20L.png)
 
- ![Homepage Tablet](/the_happy_reader/Docs/Main%20screen%20T.png)
-
  ![Homepage Mobile](/the_happy_reader/Docs/main%20screen%20S.png)
 
 
@@ -190,11 +190,8 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 ## Log In Page
 
-  ![Log In page desktop](/the_happy_reader/Docs/sign%20in%20desktop.png)
-
-  ![Log In page tablet](/the_happy_reader/Docs/sign%20in%20tablet.png)
-
-  
+  ![Log In page desktop](/the_happy_reader/Docs/signin%20d.png)
+ 
 
 * The Log In page is accessed from either the navigation bar or a button on the homepage.
 * The Log In page contains a link to the Sign Up page for the user who may have misclicked and needs to Sign Up rather than log in.
@@ -205,7 +202,7 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 ## Sign Up Page
 
-![Sign Up page desktop](/the_happy_reader/Docs/signup%20d.png)
+![Sign Up page desktop](/the_happy_reader/Docs/signup%20p.png)
 
 * The Sign Up page is accessed from either the navigation bar or a button on the homepage.
 * The Sign Up page contains a link to the Log In page for the user who may have misclicked and already has an account.
@@ -215,7 +212,6 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 * Styles are consistent with the rest of the website
 * The page is fully responsive
 
-![Sign Up page mobile](/the_happy_reader/Docs/signup%20p.png)
 
 ## Log Out Page
 
@@ -226,9 +222,6 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 * It uses django-allauth to provide all the settings for user authentication.
 * Styles are consistent with the rest of the website
 * The page is fully responsive
-
-![Log out page phone](/the_happy_reader/Docs/logout%20p.png)
-
 
 ### Create a Review
 
@@ -337,7 +330,7 @@ Pagination is implemented on some pages but it could definitely be expanded to m
 
 Html validation was done with [https://validator.w3.org/nu/](https://validator.w3.org/nu/). The deployed link from the site was used the below errors were highlighted.
 
-[HTML VALIDATION](/the_happy_reader/Docs/HTML%20error.png)
+![HTML VALIDATION](/the_happy_reader/Docs/HTML%20error.png)
 
 After researching the error message I learned on Slack that this issue was caused by a closing tag being in the wrong place. It needed to be placed after.
 
@@ -365,15 +358,20 @@ were delt with easily.
 
 # Home page
 
-Lighthouse testing [Lighthouse testing](/the_happy_reader/Docs/lighthouse%20for%20homepage.png)
+Lighthouse testing ![Lighthouse testing](/the_happy_reader/Docs/lighthouse%20for%20homepage.png)
+Most pages scored hight.
 The ligth house testing came up quite poor especially in the Preformance section and Best Practice. 
 
 * I removed two unnecessary google font links in my code. 
 * Compressed the  main images and gave images a height and width.
 
-[Lighthouse final results desktop](/the_happy_reader/Docs/lighhouse%20home%20final%20test.png)
-[Lighthouse final results mobile](/the_happy_reader/Docs/lighhouse%20home%20final%20test%20mobile.png)
+![Lighthouse final results desktop](/the_happy_reader/Docs/lighhouse%20home%20final%20test.png)
+![Lighthouse final results mobile](/the_happy_reader/Docs/lighhouse%20home%20final%20test%20mobile.png)
 
+# Age page
+![Lighthouse age page](/the_happy_reader/Docs/age%20page.png)
+
+* I amended the font size in the age section to help with accessibility.
 
 ## Manual Testing
 
@@ -526,6 +524,53 @@ In addition to the other tests, I have conducted a manual check list for myself 
 | &check; | Clicking the Send button sends the email to the Dummy Email account set up via EmailJS, that the user is redirected to the contact page.
 | &check; | That an alert message informs the user that their message was sent successfully upon the user sending the message
 
+##Bugs
+
+![env.py deleting](/the_happy_reader/Docs/Going%20back%20to%20old%20repo.png)
+
+I tried to open a new workspace by and then deleted the old workspaces which caused my env.py not to appear on my new workspace. I created an new env.py and it fixed the issue but by fixing it i lost of the work i had done.
+
+# Initial deployemnt
+* I origionally had an issue delpoying to Heroku. It was due to the word Gunicorn being spelt incorrectly in the proc file.
+[Error with procfile](/the_happy_reader/Docs/heroku%20deployment%20error%206-12.png)
+
+# Error when deleting table from database
+ 
+![delete from database](/the_happy_reader/Docs/Error%20when%20i%20delete%20the%20table%20from%20the%20database.png)
+
+* Migration had to be reversed and information deleted from that table before table could sucessfully be deleted. I deleted this table for the following reasons:
+     * I had no plans to use the infromation from the model.
+     * It ment that users could add reviews from authors that havent previously been added by me.
+
+# Sticky footer.
+* The footer would cover the submit button in the 'add review' page making it impossible for the user to submit their form.
+
+* Fix- ![body css](/the_happy_reader/Docs/footer%20fix.png)
+       ![footer css](/the_happy_reader/Docs/footer%20fix1.png)
+By adding a height of 60px on the footer and adding a margin bottom of 60px on the body it ensures that there was enough room at the bottom of the pages for buttons.
+
+# Add a review form had a drop down for review author. 
+This bug allowed others to create a review in others name.
+
+* Fix - ![view code to approve author of review](/the_happy_reader/Docs/author%20fix.png)
+The highlighted code allows the review author to be omitted from the 'add review form' and the field.
+
+# Heroku deployment issues.
+
+![H10 heroku bug](/the_happy_reader/Docs/heroku%20bug.png)
+
+* Fix
+    * Removed the Data Collection Config Var in the Heroku website.
+    * Added a os.environ in the env.py file for DEV
+      ![env.py file](/the_happy_reader/Docs/environ.png)
+    * Change the Debug to equal Dev in the settings file
+      ![settings](/the_happy_reader/Docs/settings.png)
+
+
+
+
+
+
 # Deployment
 
 ## Deployment to Heroku
@@ -665,9 +710,5 @@ This website was designed and developed in conjunction with the Full Stack Softw
 
 
 [Back to top](<#contents>)
-##bug
 
-[](//the_happy_reader/Docs/Going%20back%20to%20old%20repo.png)
-
-I tried to open a new workspace by and then deleted the old workspaces which caused my env.py not to appear on my new workspace. I created an new env.py and it fixed the issue but by fixing it i lost of the work i had done.
 
