@@ -4,13 +4,13 @@
 
 ![The happy Reader](/the_happy_reader/Docs/mockup.png)
 
-The Happy Reader is a Childrens Book Search and Review website, for users who would like to look up book reviews to help them decide the next book best suited for their child, and in turn to leave reviews on books to help others. Hopefully this well help your child grow a love for books that will last through out their life.
+The Happy Reader is a Children's Book Search and Review website for users who would like to look up book reviews to help them decide the next book best suited for their child and, in turn, to leave reviews on books to help others. Hopefully, this helps your child grow a love for books that will last through out their life.
 
 You can view the live site here - <a href="https://the-happy-reader.herokuapp.com/" target="_blank"> The happy reader </a>
 
 # Objective
 
-The aim of this site is to deliver an interactive website that users can engage with via a user log in system to acess a book database in which they can engage with to leave comments and search books for books is perfecrt for their child.
+This site aims to deliver an interactive website that users can engage with via a user log-in system to access a book database in which they can comment and search books for books that are perfect for their child.
 
 [Back to top](<#contents>)
 
@@ -18,18 +18,18 @@ The aim of this site is to deliver an interactive website that users can engage 
 
 ## Site Aims
 
-* To provide the user with a website that allows them to view book listings and reviews geared towards children
+* To provide the user with a website that allows them to view book listings and reviews geared toward children
 * To easily find books that may spark a love of books for their child.
-* To allow the user the user to create, update and delete reviews
+* To allow the user to create, update and delete reviews
 * To provide the admin user with the ability to approve, update and delete book reviews in the frontend
 * To provide a clear and appropriate response to any user inputs or actions
 
 
 ## Agile Methodology
 
-The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board which can be seen here -  <a href="https://github.com/users/LauraMayock/projects/3" target="_blank"> The happy reader Project </a>
+The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board, which can be seen here -  <a href="https://github.com/users/LauraMayock/projects/3" target="_blank"> The happy reader Project </a>
 
-Through the use of the Kanban board in the projects view in Github, the project was divived into a few different sections:
+Through the use of the Kanban board in the projects view in Github, the project was divided into a few different sections:
 * No status
 * Backlog
 * Current Iteration
@@ -39,14 +39,14 @@ Through the use of the Kanban board in the projects view in Github, the project 
 ![Kanban board github](https://res.cloudinary.com/dyhess8yw/image/upload/v1670436094/Kamban_board_r9euxi.png)
 Layout.
 
-Github issues were used to create User Stories and any other Fixes or Updates for the project. This was where the project user was assigned, labels were added to show at a glance importance of tasks and help prioritise jobs. User story was added to the appropriate Iteration and the project. Each User Story, Fix or Update had a clear title, acceptance criteria and smaller tasks (if appropriate).
+Github issues were used to create User Stories and any other Fixes or Updates for the project. This is where the project user was assigned; labels were added to show at a glance importance of tasks and help prioritize jobs. User story was added to the appropriate Iteration and the project. Each User Story, Fix or Update had a clear title, acceptance criteria and smaller tasks (if applicable).
 
-Milestones were used to create Iterations. There were 3 Iterations each dated appropriately. User Stories were completed based on the current Iteration that was in progress.
+Milestones were used to create Iterations. There were 3 Iterations, each dated appropriately. User Stories were completed based on the current Iteration that was in progress.
 
 ### User Stories
 
 **Iteration 1**
-* As a Site Admin I can create, read, update and delete posts so that I can manage my blog content.
+* As a Site Admin I can create, read, update and delete posts to manage my blog content.
 * As a user I can easily see the purpose of the site from the landing page so that I can see if the site is relevant to my needs.
 * As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments
 
@@ -64,10 +64,9 @@ Milestones were used to create Iterations. There were 3 Iterations each dated ap
 
 **Still in backlog for future features**
 * As a user I can use a search bar to search for a specific book or author so I have quick and easy access to the information I need.
-* As a user I can access my list of saved books and see the comments and likes I have left on Book reviews so that I can easily track my activity on the site and interacted with the blog owners' content
+* As a user I can access my list of saved books and see the comments and likes I have left on Book reviews so that I can easily track my activity on the site and interact with the blog owners' content
 * As a user I can view a list of books genres/categories so that I can see a list of books relating to the child's specific interests or genres.
 * As a user I can save books so that I have a list of books I approve of for my children for future reading.
-* 
 
 ## Design Wireframes
 
@@ -125,21 +124,21 @@ Milestones were used to create Iterations. There were 3 Iterations each dated ap
 </details>
 
 ## Site Structure
-On first view The Happy Reader website has 4 pages visible from the navigation bar, the Age group drop down filters the correct information onto the page which is only accessible from the home page. Sign in and log in are available on first landing as well as a contact us page. There are 2 other pages available on the nav bar when the user signs in. These are View reviews and Add a review. In the View Reviews page you can choose one of your reviews you previously created to either amend or Delete. This ensures that only authorised users can add or amend information from the database.
+On the first view, The Happy Reader website has four pages visible from the navigation bar; the Age group drop-down filters the correct information onto the page, which is only accessible from the home page. Sign-in and log-in are available on the first landing and a contact us page. Two other pages are available on the nav bar when the user signs in. These are View reviews and Add a review. In the View Reviews page, you can choose one of the reviews you previously created to either amend or Delete. This ensures that only authorized users can add or amend information from the database.
 
-The Home page, Login, Signup Age group and Contact pages can be accessed by all users. Once a user logs in or signsup they have access to the Reviews dropdown that shows Add review or see reviews. The Signup page is removed from the navbar once the user logs in and the log in page is changed to a log out page.
+The Home page, Log-in, Signup Age group and Contact pages can be accessed by all users. Once a user logs in or signs-up, they have access to the Reviews dropdown that shows Add review or see reviews. The Signup page is removed from the navbar once the user logs in, and the log-in page is changed to a log-out page.
 
 
 ## Design Choices
 
 ### Color Scheme
 
-The color scheme chosen was a dark almost black colour with a stark white contrast and a bright green used as highlights. I chose colours that would allow the imagery stand out.
+The color scheme chosen was a dark, almost black colour with white contrast and a bright green used as highlights. I chose colours that would allow the imagery to stand out.
 
 ![Site colour scheme](/the_happy_reader/Docs/colours.png)
 
 ### Typography
-One font was chosen for this website and that was Source Sans Pro from google fonts. It is clear and simple for reading. 
+One font was chosen for this website, and that was Source Sans Pro from google fonts. It is clear and simple to read. 
 
 I also chose Kalam for the Logo on both the Navbar and Footer.
 
@@ -149,16 +148,16 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 ## Navigation
 
-* The site navigation is done through the navigation bar at the top of each page and this does not change in style throughout the user's navigation of the website.
+* The site navigation is done through the navigation bar at the top of each page, and this does not change in style throughout the user's navigation of the website.
 * Tabs on the navigation bar change depending on whether the user is logged in or not.
 
     ![Navbar Admin Logged In](/the_happy_reader/Docs/nav-logged-in.png)
 
-    * If the user logs in or signs up, those two tabs are removed to be replaced with a log out tab.
+    * If the user logs in or signs up, those two tabs are removed to be replaced with a log-out tab.
 
     ![Log out tab](/the_happy_reader/Docs/nav-logged-out.png)
 
-    * Once the user logs in or signs up, a completely new tab appears called Reviews, which is essentially the users page
+    * Once the user logs in or signs up, a completely new tab appears called Reviews, which is essentially the user's page
 
 ## Home Screen
 
@@ -285,39 +284,39 @@ I also chose Kalam for the Logo on both the Navbar and Footer.
 
 ## Search Bar
 
-In a future interger i would like to add
+In a future integer, I would like to add a search bar on the main screen to make it easier to search specifically for book titles or authors. This will help ensure that users are not adding more reviews on the same book.
 
 ## Social Media Login
 
-For ease of use, user's could use their social media credentials to log in, rather than creating another password to remember.
+For ease of use, users could use their social media credentials to log in rather than creating another password to remember.
 
-## 
 
 ## User Profile Page
 
- page could be expanded  to include the ability of the user to add their bookmarked books in categories to organise them; for example, Read Again, or Must Read or Read.
+A user profile page to include the ability of the user to add saved reviews in categories to organize them; for example, Read Again or Must Read or Read. To show all comments they have made on other reviews.
 
-The page could also provide more user details that could also be added to the user profile in general. Such as a profile picture or avatar that could be utilised in their reviews, and the total number of books they have reviewed or bookmarked could be visible on their profile.
+The page could also provide more user details that could also be added to the user profile in general. Such as a profile picture or avatar that could be utilized in their reviews, and the total number of books they have reviewed or bookmarked could be visible on their profile. As well as specifying the age of the children they are browsing for.
 
+## Genre section
 
-## Better Pagination
+A genre section so that books can be chosen on the bases of the child's interests or an underlying lesson you would like the child to learn about.
 
-Pagination is implemented on some pages but it could definitely be expanded to more pages such as the My Books page or the Genre pages for better User Experience.
+## Upload images
 
+The user to be able to upload their own images via the 'add review' form.
 [Back to top](<#contents>)
 
 # Technologies Used
 
 * HTML - Used to structure all the templates on the site
 * CSS - to provide extra styling to the site
-* Python - To provide functionality to the site. Packages used in the project can be found in requirements.txt
+* Python - To provide the functionality to the site. Packages used in the project can be found in requirements.txt
 * Django - Python framework used in the project
 * Heroku - Used to deploy the site publicly
 * Heroku ElephantSQL - Used for the database during development and deployment
-* Javascript - Minimum javascript was used, to fade out alerts after a few seconds and and to  
-  create a button up which would bring the user back to the top  of the screen.
+* Javascript - Minimum javascript was used to fade out alerts after a few seconds and to create a button that would bring the user back to the top of the screen.
 * Bootstrap 4 -  used for providing layouts and styling the html in the templates
-* Basimiq - Used to create wireframes for the progect
+* Basimiq - Used to create wireframes for the project
 * Cloudinary - Used to host Static files for the site
 
 [Back to top](<#contents>)
