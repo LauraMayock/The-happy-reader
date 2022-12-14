@@ -32,7 +32,6 @@
                 <div class="row">
                     <div class="col-1">
                         <strong>
-                            <!-- If logged in you can like.Simple changes when clicked or unclicked -->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
@@ -45,7 +44,7 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                            <!-- Shows number of likes -->
+                        <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
