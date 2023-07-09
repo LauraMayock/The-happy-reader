@@ -1,1 +1,0 @@
-web: gunicorn the_happy_reader.wsgi
